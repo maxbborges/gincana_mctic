@@ -48,6 +48,17 @@ var app = {
 
 app.initialize();
 
+$.ajax({
+    method: "GET",
+    url: "http://localhost:500/index.php",
+    success: function(data){
+        console.log(data);
+    }
+})
+.fail(function(jqXHR, textStatus, msg){
+    console.log(msg);
+});
+
 function onDone(err, status){
     if (err) {
         // here we can handle errors and clean up any loose ends.
