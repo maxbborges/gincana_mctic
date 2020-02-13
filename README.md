@@ -25,3 +25,7 @@ CREATE USER 'novousuario'@'localhost' IDENTIFIED BY 'password';
 GRANT ALL PRIVILEGES ON * . * TO 'novousuario'@'localhost';
 
 FLUSH PRIVILEGES;
+
+mysql -u USUARIO -pSENHA DATABASE < ARQUIVO
+
+sudo apt-get install php7.2 php7.2-mysql libapache2-mod-php7.2
