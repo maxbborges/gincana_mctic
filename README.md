@@ -14,3 +14,6 @@ cordova plugin add cordova-plugin-qrscanner
 
 cordova run browser
 
+sudo apt-get install mysql
+
+sudo service mysql satart
