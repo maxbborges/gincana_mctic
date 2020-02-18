@@ -1,31 +1,47 @@
 # gincana-mctic
+- Instalar o Docker
 
-Como instalar:
+        $ git clone https://gitlab.com/maxbborges/projetosdocker
 
-git clone https://gitlab.com/maxbborges/gincana-mctic.git
+- Entrar na pasta clonada e na pasta do projeto
 
-cd /gincana
+        $ docker image build -t NOME_IMAGEM .
+        $ docker run -d -P -p X:80 -p X:8000 -p X:90 -p X:3001 -v "$PWD:/home/maxwell/projetos" --name NOME_PROJETO NOME_IMAGEM
+        $ docker exec -it -u maxwell bin/bash
+        
+- Acesar a pasta do usuário
 
-npm install
+        $ git clone https://gitlab.com/maxbborges/gincana-mctic.git OU ACESSAR A PASTA CLONADA 
+        $ cd gincana-mctic/gincana
+        $ npm install
+        $ cordova platforms add browser
+        $ cordova run browser OU $ cordova run --live-reload
+        
+- Configurar MYSQL
+        
+        $ sudo mysql
+ 
+        CREATE USER 'maxwell'@'localhost' IDENTIFIED BY '123456';
+        GRANT ALL PRIVILEGES ON * . * TO 'maxwell'@'localhost';
+        FLUSH PRIVILEGES;
+        exit
 
-cordova platforms add browser
+- Acessar a pasta gingacana_mctic
+    - Popular o banco
+        
+        $ mysql -u maxwell -p123456 gincana_mctic < sql_gincana_mctic.sql
+        $ mysql -p123456
+        
 
-cordova plugin add cordova-plugin-qrscanner
+- Configurar APACHE2
 
-cordova run browser
+        $ sudo nano /etc/apache2/sites-enabled/000-default.conf
 
-sudo apt-get install mysql-server
-
-sudo service mysql start
-
-sudo mysql
-
-CREATE USER 'novousuario'@'localhost' IDENTIFIED BY 'password';
-
-GRANT ALL PRIVILEGES ON * . * TO 'novousuario'@'localhost';
-
-FLUSH PRIVILEGES;
-
-mysql -u USUARIO -pSENHA DATABASE < ARQUIVO
-
-sudo apt-get install php7.2 php7.2-mysql libapache2-mod-php7.2
+        DocumentRoot /home/maxwell/gincana-mctic/gincana_server
+            
+        <Directory /home/maxwell/gincana-mctic/gincana_server>
+            AllowOverride none 
+            Require all granted
+        </Directory>
+        
+        $ sudo service apache2 restart
