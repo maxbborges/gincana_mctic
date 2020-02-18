@@ -30,6 +30,11 @@ var app = {
         document.querySelector("#scan").addEventListener("click", function() {
             window.QRScanner.prepare(onDone);
         });
+
+        document.querySelector("#btn-login").addEventListener("click", function() {
+            login();
+        });
+
         this.receivedEvent('deviceready');
     },
 
@@ -50,7 +55,7 @@ app.initialize();
 
 $.ajax({
     method: "GET",
-    url: "http://localhost:500/index.php",
+    url: "http://localhost:700",
     success: function(data){
         console.log(data);
     }
@@ -99,4 +104,31 @@ function displayContents(err, text){
             document.getElementsByTagName("body")[0].removeAttribute('style');
         });
     }
+}
+
+function login(){ 
+    $.ajax({
+        method: 'POST',
+        url: 'http://localhost:700/',
+        data : $("#login-form").serialize(),
+        dataType: 'json',
+        success:  function(response){
+            console.log(response);						
+            // if(response.codigo == "1"){	
+            //     $("#btn-login").html('Entrar');
+            //     $("#login-alert").css('display', 'none')
+            //     window.location.href = "home.php";
+            // }
+            // else{			
+            //     $("#btn-login").html('Entrar');
+            //     $("#login-alert").css('display', 'block')
+            //     $("#mensagem").html('<strong>Erro! </strong>' + response.mensagem);
+            // }
+        }
+    })
+    .fail(function(jqXHR, textStatus, msg){
+        console.log(msg);
+        console.log(textStatus);
+        console.log(jqXHR);
+    });
 }
