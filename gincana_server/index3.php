@@ -4,7 +4,7 @@
     session_start();
     
     require_once './connection.php';
-    echo $_GET['callback'].'('.json_encode(array('status'=>1, 'outros'=>$_COOKIE)).')';
+    echo $_GET['callback'].'('.json_encode(array('status'=>1, 'PHPSESSID'=>$_COOKIE)).')';
     
     if (isset($_POST['nome'])&&$_POST['nome']!=null){
         // $_COOKIE['xxx'] = 4;

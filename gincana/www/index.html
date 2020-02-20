@@ -39,13 +39,89 @@
         <title>Hello World</title>
     </head>
     <body>
-        <div class="app">
+        <!-- <div class="app">
             <h1>Apache Cordova</h1>
             <div id="deviceready" class="blink">
                 <p class="event listening">Connecting to Device</p>
                 <p class="event received">Device is Ready</p>
             </div>
-        </div>
+        </div> -->
+
+        <style type="text/css">
+            #login-alert{
+                display: none;
+            }
+         
+            .margin-top-pq{
+                margin-top: 10px;
+            }
+         
+            .margin-top-md{
+                margin-top: 25px;
+            }
+         
+            .margin-bottom-md{
+                margin-bottom: 25px;
+            }
+         
+            .padding-top-md{
+                padding-top: 30px;
+            }
+            </style>
+            
+            <div class="container">    
+                <div id="loginbox" class="mainbox col-md-7 col-md-offset-3 col-sm-8 col-sm-offset-2 margin-top-md">                    
+                    <div class="panel panel-primary" >
+                        <div class="panel-heading">
+                            <div class="panel-title">Login</div>
+                        </div>     
+         
+                        <div class="panel-body padding-top-md" >
+                            <div id="login-alert" class="alert alert-danger col-sm-12">
+                                <span class="glyphicon glyphicon-exclamation-sign"></span>
+                                <span id="mensagem"></span>
+                            </div>      
+                            <form id="login-form" class="form-horizontal" role="form" action="http://localhost:8000/index.html" method="GET">             
+                                <div class="input-group margin-bottom-md">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                    <input type="text" class="form-control" id="nome" name="nome" required placeholder="Informe seu Nome">                                        
+                                </div>
+        
+                                <div class="input-group margin-bottom-md">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="Informe seu E-mail" required>                                        
+                                </div>
+        
+                                <div class="input-group margin-bottom-md">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                    <input type="text" class="form-control" id="redeSocial" name="redeSocial" required placeholder="Informe sua rede social">                                        
+                                </div>
+                                    
+                                <div class="input-group margin-bottom-md">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                    <input type="date" class="form-control" id="dataDeNascimento" name="dataDeNascimento" required placeholder="Informe sua data de nascimento">
+                                </div>
+
+                                <div class="input-group margin-bottom-md">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                    <input type="text" class="form-control" id="cookie" name="cookie" required placeholder="Informe sua data de nascimento">
+                                </div>
+                                        
+                                <div class="form-group margin-top-pq">
+                                    <div class="col-sm-12 controls">
+                                        <button type="button" class="btn btn-primary" name="btn-login" id="btn-login">
+                                          Entrar
+                                        </button>
+                                    </div>
+                                </div> 
+         
+                            </form>     
+                        </div>  
+         
+                    </div>  
+                </div>
+            </div> 
+
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
     </body>

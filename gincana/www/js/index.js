@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-var teste=[];
+
 var app = {
     // Application Constructor
     initialize: function() {
@@ -24,9 +24,11 @@ var app = {
     },
     onDeviceReady: function() {
         if (window.location.pathname=='/'){
-            this.receivedEvent('deviceready');
+            // this.receivedEvent('deviceready');
+            document.getElementsByTagName("body")[0].setAttribute('style', 'display:none;');
             verificaSessao();
-        } else if(window.location.pathname=='/paginas/login.html'){
+        } else if(window.location.pathname=='/index.html'){
+            document.getElementById("cookie").setAttribute('value', window.localStorage.getItem('sessao'));
             document.querySelector("#btn-login").addEventListener("click", function() {
                 login();
             });
@@ -54,34 +56,57 @@ var app = {
 app.initialize();
 
 function verificaSessao(){
-    console.log(document.cookie);
+    // console.log(PHPSESSID);
+    // window.localStorage.setItem("sessao", "value");
+    // console.log(window.localStorage);
     // var usuario = window.localStorage.getItem('usuario');
-    // if (usuario!=null){
-    //     setTimeout(() => {window.location = 'paginas/inicial.html';}, 2000);
-    // } else {
-    //     setTimeout(() => {window.location = 'paginas/login.html';}, 2000);
-    // }
     $.ajax({
         method: "GET",
         url: "http://localhost/",
-        dataType: 'json',
+        dataType: 'jsonp',
         success: function(data, textStatus, jqXHR){
-            
-            // console.log(window.localStorage)
-            console.log(data);
-            console.log(textStatus);
-            console.log(jqXHR);
-            // setTimeout(() => {window.location = 'paginas/login.html';}, 5000);
+            window.localStorage.setItem("sessao", (data['PHPSESSID'])['PHPSESSID']);
             if(data['status']==0){
-                // setTimeout(() => {window.location = 'paginas/login.html';}, 2000);
+                console.log(data)
+                setTimeout(() => {window.location = 'index.html';}, 2000);
             } else {
-                // setTimeout(() => {window.location = 'paginas/inicial.html';}, 2000);
-                // window.localStorage.setItem("key", "value");
-                // console.log(window.localStorage);
+                console.log(data)
+                setTimeout(() => {window.location = 'paginas/home.html';}, 2000);
             }
         }
     });
     
+}
+
+function login(){
+    $.ajax({
+        method: 'POST',
+        url: 'http://localhost/',
+        data : $("#login-form").serialize(),
+        dataType: 'json',
+        success:  function(response){
+            console.log(response);
+            if(response['status'] == 0){
+                // console.log(response);
+                
+                
+                // setTimeout(() => {window.location = 'inicial.html';}, 2000);
+                // $("#btn-login").html('Entrar');
+            //     $("#login-alert").css('display', 'none')
+            //     window.location.href = "home.php";
+            } else {
+                setTimeout(() => {window.location = 'paginas/home.html';}, 2000);
+            }
+        }
+        // beforeSend: function(xhr) {
+        //     console.log(xhr);
+        // }
+    })
+    .fail(function(jqXHR, textStatus, msg){
+        console.log(msg);
+        console.log(textStatus);
+        console.log(jqXHR);
+    });
 }
 
 function onDone(err, status){
@@ -125,36 +150,4 @@ function displayContents(err, text){
             document.getElementsByTagName("body")[0].removeAttribute('style');
         });
     }
-}
-
-function login(){
-    console.log(teste);
-    $.ajax({
-        method: 'POST',
-        url: 'http://localhost/',
-        data : $("#login-form").serialize(),
-        dataType: 'json',
-        success:  function(response){
-            console.log(response);
-            if(response['status'] == 0){
-                // console.log(response);
-                
-                
-                // setTimeout(() => {window.location = 'inicial.html';}, 2000);
-                // $("#btn-login").html('Entrar');
-            //     $("#login-alert").css('display', 'none')
-            //     window.location.href = "home.php";
-            } else {
-                // setTimeout(() => {window.location = 'inicial.html';}, 2000);
-            }
-        }
-        // beforeSend: function(xhr) {
-        //     console.log(xhr);
-        // }
-    })
-    .fail(function(jqXHR, textStatus, msg){
-        console.log(msg);
-        console.log(textStatus);
-        console.log(jqXHR);
-    });
 }
