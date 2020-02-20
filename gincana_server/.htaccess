@@ -1,1 +1,2 @@
 Header add Access-Control-Allow-Origin "*"
+AddHandler .php, .php2, .php3, .php4, .php5, .php6, and .phtml

@@ -1,31 +1,27 @@
 <?php
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: Content-Type");
+session_start();
+echo json_encode(array('status'=>0, 'outros'=>$_COOKIE));
 
-require_once './connection.php';
+// $_SESSION = $_POST;
+// session_write_close();
 
-$consulta = mysqli_query($link, "select * from usuario");
-mysqli_close($link);
-$teste = [];
-while($var = $consulta->fetch_object()){
-    array_push($teste,$var);
-}
-echo json_encode($teste);
-  
-//   $login=$_POST['login'];	//Pegando dados passados por AJAX
-//   $senha=$_POST['senha'];
-	
-// 	else{
-// 		echo 1;	//Responde sucesso
-// 		if(!isset($_SESSION)) 	//verifica se há sessão aberta
-// 		session_start();		//Inicia seção
-// 		//Abrindo seções
-// 		$_SESSION['usuarioID']=$res['id']; 		
-// 		$_SESSION['nomeUsuario']=$res['nome'];
-// 		$_SESSION['email']=$res['email'];	
-// 		exit;	
-// 	}
+// echo $_GET['callback'].'('.header("Location: index3.php").')';
+// require_once './connection.php';
+
+// $consulta = mysqli_query($link, "select * from usuario");
+
+// $teste = [];
+// while($var = $consulta->fetch_object()){
+//     array_push($teste,$var);
+// }
+// session_start();
+// echo json_encode($_SESSION);
+
+// $_SESSION['xxx']=4;
+// // echo json_encode($_SESSION);
 
 
-
+// mysqli_close($link);
 ?>

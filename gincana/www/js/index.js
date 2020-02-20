@@ -16,26 +16,26 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+var teste=[];
 var app = {
     // Application Constructor
     initialize: function() {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
     },
-
-    // deviceready Event Handler
-    //
-    // Bind any cordova events here. Common events are:
-    // 'pause', 'resume', etc.
     onDeviceReady: function() {
-        document.querySelector("#scan").addEventListener("click", function() {
-            window.QRScanner.prepare(onDone);
-        });
-
-        document.querySelector("#btn-login").addEventListener("click", function() {
-            login();
-        });
-
-        this.receivedEvent('deviceready');
+        if (window.location.pathname=='/'){
+            this.receivedEvent('deviceready');
+            verificaSessao();
+        } else if(window.location.pathname=='/paginas/login.html'){
+            document.querySelector("#btn-login").addEventListener("click", function() {
+                login();
+            });
+        } else if(window.location.pathname=='/paginas/inicial.html'){
+            document.querySelector("#scan").addEventListener("click", function() {
+                window.QRScanner.prepare(onDone);
+                
+            });
+        }
     },
 
     // Update DOM on a Received Event
@@ -53,16 +53,36 @@ var app = {
 
 app.initialize();
 
-$.ajax({
-    method: "GET",
-    url: "http://localhost:700",
-    success: function(data){
-        console.log(data);
-    }
-})
-.fail(function(jqXHR, textStatus, msg){
-    console.log(msg);
-});
+function verificaSessao(){
+    console.log(document.cookie);
+    // var usuario = window.localStorage.getItem('usuario');
+    // if (usuario!=null){
+    //     setTimeout(() => {window.location = 'paginas/inicial.html';}, 2000);
+    // } else {
+    //     setTimeout(() => {window.location = 'paginas/login.html';}, 2000);
+    // }
+    $.ajax({
+        method: "GET",
+        url: "http://localhost/",
+        dataType: 'json',
+        success: function(data, textStatus, jqXHR){
+            
+            // console.log(window.localStorage)
+            console.log(data);
+            console.log(textStatus);
+            console.log(jqXHR);
+            setTimeout(() => {window.location = 'paginas/login.html';}, 5000);
+            if(data['status']==0){
+                // setTimeout(() => {window.location = 'paginas/login.html';}, 2000);
+            } else {
+                // setTimeout(() => {window.location = 'paginas/inicial.html';}, 2000);
+                // window.localStorage.setItem("key", "value");
+                // console.log(window.localStorage);
+            }
+        }
+    });
+    
+}
 
 function onDone(err, status){
     if (err) {
@@ -93,6 +113,7 @@ function displayContents(err, text){
         console.log("erro");
         // an error occurred, or the scan was canceled (error code `6`)
     } else {
+        console.log(text.result);
         document.getElementById('qrAddress').setAttribute('value', text.result);
         document.getElementById('qrAddress').style.display = 'block';
         window.QRScanner.hide(function(status){
@@ -106,25 +127,30 @@ function displayContents(err, text){
     }
 }
 
-function login(){ 
+function login(){
+    console.log(teste);
     $.ajax({
         method: 'POST',
-        url: 'http://localhost:700/',
+        url: 'http://localhost/',
         data : $("#login-form").serialize(),
         dataType: 'json',
         success:  function(response){
-            console.log(response);						
-            // if(response.codigo == "1"){	
-            //     $("#btn-login").html('Entrar');
+            console.log(response);
+            if(response['status'] == 0){
+                // console.log(response);
+                
+                
+                // setTimeout(() => {window.location = 'inicial.html';}, 2000);
+                // $("#btn-login").html('Entrar');
             //     $("#login-alert").css('display', 'none')
             //     window.location.href = "home.php";
-            // }
-            // else{			
-            //     $("#btn-login").html('Entrar');
-            //     $("#login-alert").css('display', 'block')
-            //     $("#mensagem").html('<strong>Erro! </strong>' + response.mensagem);
-            // }
+            } else {
+                // setTimeout(() => {window.location = 'inicial.html';}, 2000);
+            }
         }
+        // beforeSend: function(xhr) {
+        //     console.log(xhr);
+        // }
     })
     .fail(function(jqXHR, textStatus, msg){
         console.log(msg);
