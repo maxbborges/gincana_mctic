@@ -1,0 +1,25 @@
+body {
+    background-color:#5C7E91;
+}
+
+/* Landscape layout (with min-width) */
+@media screen and (min-width:200px) and (max-width:900px) {
+    body {
+        background-color:#5C7E91;
+    }
+
+    #div_logo_gincana{
+        text-align: center;
+        margin-top: 100px;
+    }
+
+    #logo_gincana{
+        height: 150px;
+        width: 200px;
+    }
+
+    #div_header_termos{
+        text-align: center;
+    }
+}
+

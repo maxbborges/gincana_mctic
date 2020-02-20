@@ -71,7 +71,7 @@ function verificaSessao(){
             console.log(data);
             console.log(textStatus);
             console.log(jqXHR);
-            setTimeout(() => {window.location = 'paginas/login.html';}, 5000);
+            // setTimeout(() => {window.location = 'paginas/login.html';}, 5000);
             if(data['status']==0){
                 // setTimeout(() => {window.location = 'paginas/login.html';}, 2000);
             } else {
