@@ -8,6 +8,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `rede_social` varchar(50) DEFAULT NULL,
   `tipo_rede_social` varchar(50) DEFAULT NULL,
   `pontos` smallint(6) DEFAULT NULL,
+  `sessao` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ;
 
