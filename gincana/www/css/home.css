@@ -1,0 +1,43 @@
+@media screen and (min-width:200px) and (max-width:900px) {
+
+    #info_jogador{
+        text-align: center;
+    }
+
+    #div_span_jogador, #div_titulo_pontos{
+        margin-top: 54px;
+    }
+
+    #div_span_usuario, #div_pontos{
+        margin-top: 12px;
+    }
+
+    .span_titulo_pontos{
+        font-size: 16px;
+        color: #FFCB06;
+        font-style: normal;
+        font-weight: normal;
+    }
+
+    .span_pontos{
+        font-size: 24px;
+        color: white;
+    }
+
+    #div_btn_home{
+        text-align: center;
+    }
+
+    #btn_ler_qr{
+        width: 294px;
+        margin-top: 44px;
+    }
+
+    #btn_trocar_pontos{
+        width: 294px;
+        margin-top: 33px;
+    }
+
+
+}
+

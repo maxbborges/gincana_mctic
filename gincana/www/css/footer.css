@@ -1,0 +1,30 @@
+@media screen and (min-width:200px) and (max-width:900px) {
+
+    .footer{
+        position: absolute;
+        width: 100%;
+        height: 91px;
+        left: 0px;
+        top: 645px;
+        background: #00B3DE;
+        box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    .logo_ibict{
+        top: 27px;
+        float: left;
+        margin-left: 60px;
+        margin-top: 41px;
+    }
+
+    .logo_mctic{
+        /* position: absolute; */
+        width: 248px;
+        height: 49px;
+        float: right;
+        margin-top: 27px;
+    }
+
+   
+}
+

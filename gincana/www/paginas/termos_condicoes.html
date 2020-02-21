@@ -6,30 +6,72 @@
         content="default-src 'self' blob:* data: gap: http://* https://ssl.gstatic.com https://cdn.jsdelivr.net 'unsafe-eval'; style-src http://* 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:; connect-src *;worker-src *;">
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <meta name="viewport"
+        content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
 
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../css/layout.css">
+    <link rel="stylesheet" type="text/css" href="../css/footer.css">
+    <link rel="stylesheet" type="text/css" href="../css/termos_condicoes.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
 
     <script src="/node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../js/termos_condicoes.js"></script>
+    <script type="text/javascript" src="../js/footer.js"></script>
 
-    <title>Hello World</title>
+    <title>1ª Gincana Científica Tecnológica - MCTIC</title>
 </head>
 
 <body>
-    <div class="container">
-        <div id="div_logo_gincana">
-            <img src="../img/logo_gincana.jpg" id="logo_gincana"/>
-        </div>     
-        <div class="clearfix"></div>
-        <br>
-        <div id="div_header_termos">
-            <h1>Termos</h1>
-        </div>
-        
+    <div class="div_logo_gincana">
+        <img src="../img/logo_gincana.png" class="logo_gincana" />
     </div>
+    <div id="div_header_termos">
+        <div id="div_jogador">
+            <span class="span_jogador">JOGADOR</span>
+        </div>
+        <div id="div_nome_jogador">
+            <span class="nome_usuario">LEANDRO</span>
+            <hr class="hr_termos">
+        </div>
+    </div>
+    <div id="div_termos">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In quis velit varius, aliquam risus venenatis,
+            pharetra tortor. Vestibulum orci mauris, ullamcorper quis quam a, lacinia tristique odio. In mattis, enim id
+            blandit posuere, neque ante condimentum lectus, at imperdiet sapien risus in quam. Etiam varius volutpat
+            quam, ut tempus ex faucibus sed. Duis in sodales quam. Fusce eu sem dignissim, placerat lectus a, tristique
+            erat. Maecenas sapien felis, vulputate et sagittis ac, rhoncus vel ante. Etiam vitae sapien eu enim blandit
+            lobortis. Vivamus feugiat quis purus ac egestas. Duis placerat, tortor at feugiat vulputate, nisi leo
+            consequat nulla, vitae suscipit magna tortor eget enim. In dictum viverra erat, id congue lorem faucibus
+            quis. Nullam ultricies lectus nisi, ac faucibus turpis lobortis suscipit. Sed gravida imperdiet pulvinar.
+            Etiam rutrum urna ac convallis consectetur. Donec in felis ac erat condimentum lacinia. Proin congue nisl ut
+            blandit tincidunt.
+            Vestibulum sodales lectus eget pharetra finibus. Sed scelerisque metus id arcu aliquet, nec imperdiet dui
+            vulputate. Aenean eget imperdiet metus. Donec pellentesque dignissim gravida. Proin et risus vitae sem
+            gravida pharetra at nec nisi. Aliquam erat volutpat. Aenean facilisis, dui sed placerat rutrum, neque libero
+            porttitor est, in pretium ligula elit maximus dui. Ut suscipit eget metus vel aliquet. Aenean vulputate
+            ullamcorper massa, id laoreet ligula vulputate at.
+            Pellentesque cursus non turpis id ultrices. Ut et justo augue. Mauris ac lacinia urna. Donec fermentum
+            dignissim auctor. Morbi aliquam tortor orci, ac pharetra nibh tristique sit amet. Nunc eget eleifend tellus.
+            Donec fringilla leo sit amet arcu blandit, id euismod augue finibus. Sed nec lectus nec tellus tristique
+            blandit at id mauris. Nullam luctus varius nunc, non ornare nunc dignissim scelerisque. Quisque luctus
+            ultrices risus, in hendrerit lectus vestibulum sed. Etiam sit amet suscipit massa. Duis ipsum odio,
+            venenatis non libero ac, hendrerit ullamcorper justo. In mattis porta eros gravida volutpat. Nunc vehicula
+            nibh vel augue fringilla scelerisque. Pellentesque euismod congue mauris, ut molestie ligula malesuada
+            venenatis. Donec pellentesque sem in facilisis dignissim.
+            Curabitur euismod vitae turpis id semper. Nulla sollicitudin posuere sapien, gravida vestibulum est
+            fringilla vitae. Ut sit amet velit quam. Fusce a mollis lectus. Quisque vel aliquam nisi, eget vehicula
+            purus. In imperdiet luctus rhoncus. Vivamus feugiat quam eu sem sollicitudin, ut ornare mauris commodo.
+        </p>
+    </div>
+    <button type="button" id="btn_cancelar_termos" class="btn_cancelar">CANCELAR</button>
+    <button type="button" id="btn_aceitar_termos" class="btn_inicio">ACEITO</button>
+    <div id="footer"></div>
 </body>
 
 </html>

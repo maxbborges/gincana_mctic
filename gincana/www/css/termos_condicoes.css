@@ -1,0 +1,52 @@
+@media screen and (min-width:200px) and (max-width:900px) {
+
+    #div_header_termos {
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+
+    #div_nome_jogador{
+        margin-top: 12px;
+    }
+    
+    #div_jogador{
+        margin-bottom: 12px;;
+    }
+
+    .hr_termos{
+        border:1px solid  #FFCB06;
+        margin-top: 0px;
+        margin-bottom: 25px;
+    }
+
+    #div_termos{
+        max-height: 294px;
+        height: 294px;
+        overflow-y: auto;
+        background-color: #FFFFFF;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    #div_termos p{
+        font-size: 16px;
+        color: rgba(0, 0, 0, 0.541327);        
+    }
+
+    #btn_cancelar_termos{
+        margin-top: 15px;
+        margin-left: 59px;
+        float: left;
+        width: 99px;
+    }
+
+    #btn_aceitar_termos{
+        float: right;
+        margin-top: 15px;
+        margin-right: 59px;
+        width: 99px;
+    }
+
+
+}
+

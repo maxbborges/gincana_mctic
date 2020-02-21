@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self' blob:* data: gap: http://* https://ssl.gstatic.com https://cdn.jsdelivr.net 'unsafe-eval'; style-src http://* 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:; connect-src *;worker-src *;">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport"
+        content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/layout.css">
+    <link rel="stylesheet" type="text/css" href="../css/footer.css">
+    <link rel="stylesheet" type="text/css" href="../css/home.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/home.js"></script>
+    <script type="text/javascript" src="../js/footer.js"></script>
+
+    <title>Hello World</title>
+</head>
+
+<body>
+    <div class="container"></div>
+    <div class="div_logo_gincana">
+        <img src="../img/logo_gincana.png" class="logo_gincana" />
+    </div>
+    <div class="container">
+        <div id="info_jogador">
+            <div id="div_span_jogador">
+                <span class="span_jogador">JOGADOR</span>
+            </div>
+            <div id="div_span_usuario">
+                <span class="nome_usuario">LEANDRO</span>
+            </div>
+            <div id="div_titulo_pontos">
+                <span class="span_titulo_pontos">TOTAL DE PONTOS</span>
+            </div>
+            <div id="div_pontos">
+                <span id="span_pontos" class="span_pontos">15 PONTOS</span>
+            </div>
+        </div>
+        <div id="div_btn_home">
+            <!-- <div id="div_btn_qr"> -->
+                <button type="button" id="btn_ler_qr" class="btn_inicio">LER QR CODE</button>
+            <!-- </div> -->
+            <!-- <div id="div_btn_troca"> -->
+                <button type="button" id="btn_trocar_pontos" class="btn_troca_pontos">TROCA DE PONTOS</button>
+            <!-- </div> -->
+        </div>
+    </div>
+    <div id="footer"></div>
+</body>
+
+</html>

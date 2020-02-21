@@ -1,1 +1,7 @@
-console.log('ddddd');
+$( document ).ready(function() {
+    
+    
+
+    
+});
+
