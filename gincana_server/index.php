@@ -1,8 +1,28 @@
 <?php
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: Content-Type");
-session_start();
-echo json_encode(array('status'=>0, 'outros'=>$_COOKIE));
+require_once './connection.php';
+
+if (!isset($_COOKIE['PHPSESSID'])){
+    session_start();
+    echo $_GET['callback'].'('.json_encode(array('status'=>0)).')';
+} else {
+    if ((mysqli_query($link,'SELECT EXISTS(SELECT * FROM usuario where sessao="'.$_COOKIE['PHPSESSID'].'");'))->fetch_row()[0]){
+        echo $_GET['callback'].'('.json_encode(array('status'=>1,)).')';
+    }
+    else {
+        echo $_GET['callback'].'('.json_encode(array('status'=>0)).')';
+    }
+}
+
+
+
+
+
+
+
+
+// echo json_encode(array('status'=>0, 'outros'=>$_COOKIE));
 
 // $_SESSION = $_POST;
 // session_write_close();

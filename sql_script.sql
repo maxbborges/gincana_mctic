@@ -1,5 +1,5 @@
-INSERT INTO usuario (nome,email,nascimento,rede_social,tipo_rede_social,pontos) values ("Maxwell Borges","max@gmail.com","1994-02-25","@maxwell.borges","twitter",15);
-INSERT INTO usuario (nome,email,nascimento,rede_social,tipo_rede_social,pontos) values ("Leandro Chaves","leandro@gmail.com","1994-01-21","@leandrochl","instagram",5);
+INSERT INTO usuario (nome,email,nascimento,rede_social,tipo_rede_social,pontos,sessao) values ("Maxwell Borges","max@gmail.com","1994-02-25","@maxwell.borges","twitter",15,"");
+INSERT INTO usuario (nome,email,nascimento,rede_social,tipo_rede_social,pontos,sessao) values ("Leandro Chaves","leandro@gmail.com","1994-01-21","@leandrochl","instagram",5,"");
 
 INSERT INTO premio (codigo,descricao,estoque,pontos) VALUES ('MCTIC0002', 'Caderno', 20, 15);
 INSERT INTO premio (codigo,descricao,estoque,pontos) VALUES ('MCTIC0003', 'Lápis', 100, 5);
