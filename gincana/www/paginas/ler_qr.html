@@ -22,10 +22,9 @@
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
         crossorigin="anonymous"></script>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../js/ler_qr.js"></script>
+    
     <script type="text/javascript" src="../js/footer.js"></script>
     <script type="text/javascript" src="../js/header.js"></script>
-    <script type="text/javascript" src="../cordova.js"></script>
 
     <title>Hello World</title>
 </head>
@@ -33,9 +32,16 @@
 <body>
     <div id="header"></div>
     <div class="clearfix"></div>
-    <a id="prepare">QR Scanner</a>
-    <a id="show">QR Show</a>
-    <a id="scan">QR Scan</a>
+    <div class='blink'>
+        <a id="prepare">QR Scanner</a>
+    <!-- <a id="show">QR Show</a>
+    <a id="scan">QR Scan</a> -->
+    
+    </div>
     <div id="footer"></div>
+
+    <script type="text/javascript" src="../cordova.js"></script>
+    <script type="text/javascript" src="../js/ler_qr.js"></script>
+    
 </body>
 </html>

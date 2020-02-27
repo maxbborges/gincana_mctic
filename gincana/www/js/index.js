@@ -25,8 +25,12 @@ var app = {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
     },
     onDeviceReady: function() {
-        document.getElementsByTagName("body")[0].setAttribute('style', 'display:none;');
+        // document.getElementsByTagName("body")[0].setAttribute('style', 'display:none;');
         verificaSessao();
+
+        document.querySelector("#prepare1").addEventListener("click", function() {
+            window.QRScanner.prepare(onDone);
+        });
 
         if (window.location.pathname=='/'){
             // this.receivedEvent('deviceready');
@@ -73,10 +77,10 @@ function verificaSessao(){
         success: function(data, textStatus, jqXHR){
             console.log(data);
             if(data['status']==0){
-                setTimeout(() => {window.location = 'paginas/index.html';}, 8000);
+                // setTimeout(() => {window.location = 'paginas/index.html';}, 8000);
             } else {
                 console.log(data)
-                setTimeout(() => {window.location = 'paginas/home.html';}, 8000);
+                // setTimeout(() => {window.location = 'paginas/home.html';}, 8000);
             }
         }
     });
@@ -143,15 +147,15 @@ function displayContents(err, text){
         // an error occurred, or the scan was canceled (error code `6`)
     } else {
         console.log(text.result);
-        document.getElementById('qrAddress').setAttribute('value', text.result);
-        document.getElementById('qrAddress').style.display = 'block';
-        window.QRScanner.hide(function(status){
-            var elements = document.getElementsByClassName('blink');
+        // document.getElementById('qrAddress').setAttribute('value', text.result);
+        // document.getElementById('qrAddress').style.display = 'block';
+        // window.QRScanner.hide(function(status){
+        //     var elements = document.getElementsByClassName('blink');
 
-            for (var i = 0; i < elements.length; i++){
-                elements[i].style.display = 'block';
-            }
-            document.getElementsByTagName("body")[0].removeAttribute('style');
-        });
+        //     for (var i = 0; i < elements.length; i++){
+        //         elements[i].style.display = 'block';
+        //     }
+        //     document.getElementsByTagName("body")[0].removeAttribute('style');
+        // });
     }
 }
