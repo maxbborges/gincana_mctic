@@ -17,6 +17,8 @@
  * under the License.
  */
 
+$("#footer").load("paginas/footer.html"); 
+
 var app = {
     // Application Constructor
     initialize: function() {
@@ -35,10 +37,10 @@ var app = {
         //         login();
         //     });
         // } else if(window.location.pathname=='/paginas/inicial.html'){
-        //     document.querySelector("#scan").addEventListener("click", function() {
-        //         window.QRScanner.prepare(onDone);
+            // document.querySelector("#scan").addEventListener("click", function() {
+            //     window.QRScanner.prepare(onDone);
                 
-        //     });
+            // });
         }
     },
 

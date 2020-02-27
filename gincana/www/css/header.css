@@ -1,11 +1,12 @@
 @media screen and (min-width:200px) and (max-width:900px) {
 
     .header{
-        position: absolute;
+        /* position: fixed; */
         width: 414px;
         height: 85px;
         left: 0px;        
         background: #134663;
+        width: 100%;
     }
 
     .logo_gincana_header{

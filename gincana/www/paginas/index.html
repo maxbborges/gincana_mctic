@@ -18,8 +18,9 @@
     under the License.
 -->
 <html>
-    <head>
-        <!--
+
+<head>
+    <!--
         Customize this policy to fit your own app's needs. For more guidance, see:
             https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
         Some notes:
@@ -28,101 +29,86 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' blob:* data: gap: http://* https://ssl.gstatic.com https://cdn.jsdelivr.net 'unsafe-eval'; style-src http://* 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:; connect-src *;worker-src *;">
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <link rel="stylesheet" type="text/css" href="../css/index.css">
-        <script src="../js/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="../js/bootstrap.min.js"></script>
-        <title>Hello World</title>
-    </head>
-    <body>
-        <!-- <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self' blob:* data: gap: http://* https://ssl.gstatic.com https://cdn.jsdelivr.net 'unsafe-eval'; style-src http://* 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:; connect-src *;worker-src *;">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport"
+        content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <link rel="stylesheet" type="text/css" href="../css/layout.css">
+    <link rel="stylesheet" type="text/css" href="../css/footer.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/footer.js"></script>
+
+    <title>1ª Gincana Científica Tecnológica - MCTIC</title>
+</head>
+
+<body>
+
+
+    <div class="container">
+        <!-- <div id="loginbox" class="mainbox col-md-7 col-md-offset-3 col-sm-8 col-sm-offset-2 margin-top-md">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <div class="panel-title">Login</div>
+                </div> -->
+
+                <div id="div_form_login"> 
+                    <div class="div_logo_gincana">
+                        <img src="../img/logo_gincana_wide.png" class="logo_gincana_login" />
+                    </div>
+                    <div id="login-alert" class="alert alert-danger col-sm-12">
+                        <span class="glyphicon glyphicon-exclamation-sign"></span>
+                        <span id="mensagem"></span>
+                    </div>
+                    <form id="login-form" class="form-horizontal" role="form" action="http://localhost:8000/index.html"
+                        method="GET">
+                        <div class="input-group margin-bottom-md">
+                            <input type="text" class="form-control form_input" id="nome" name="nome" required
+                                placeholder="NOME">
+                        </div>
+
+                        <div class="input-group margin-bottom-md">
+                            <input type="email" class="form-control form_input" id="email" name="email"
+                                placeholder="E-MAIL" required>
+                        </div>
+
+                        <div class="input-group margin-bottom-md">
+                            <input type="text" class="form-control form_input" id="redeSocial" name="redeSocial" required
+                                placeholder="REDE SOCIAL">
+                        </div>
+
+                        <div class="input-group margin-bottom-md">
+                            <input type="date" class="form-control form_input" id="dataDeNascimento" name="dataDeNascimento"
+                                required placeholder="DATA DE NASCIMENTO">
+                        </div>
+
+                        <div class="input-group margin-bottom-md">
+                            <input type="text" class="form-control form_input" id="cookie" name="cookie" required
+                                placeholder="DATA DE NASCIMENTO">
+                        </div>
+
+                        <div class="form-group margin-top-pq div_btn_login">
+                            <div class="col-sm-12 controls">
+                                <button type="button" class="btn btn_inicio" name="btn-login" id="btn-login">SEGUINTE</button>
+                            </div>
+                        </div>
+
+                    </form>
+                 </div>
+
+           <!-- </div>
         </div> -->
+    </div> 
+    <div id="footer"></div>
 
-        <style type="text/css">
-            #login-alert{
-                display: none;
-            }
-         
-            .margin-top-pq{
-                margin-top: 10px;
-            }
-         
-            .margin-top-md{
-                margin-top: 25px;
-            }
-         
-            .margin-bottom-md{
-                margin-bottom: 25px;
-            }
-         
-            .padding-top-md{
-                padding-top: 30px;
-            }
-            </style>
-            
-            <div class="container">    
-                <div id="loginbox" class="mainbox col-md-7 col-md-offset-3 col-sm-8 col-sm-offset-2 margin-top-md">                    
-                    <div class="panel panel-primary" >
-                        <div class="panel-heading">
-                            <div class="panel-title">Login</div>
-                        </div>     
-         
-                        <div class="panel-body padding-top-md" >
-                            <div id="login-alert" class="alert alert-danger col-sm-12">
-                                <span class="glyphicon glyphicon-exclamation-sign"></span>
-                                <span id="mensagem"></span>
-                            </div>      
-                            <form id="login-form" class="form-horizontal" role="form" action="http://localhost:8000/index.html" method="GET">             
-                                <div class="input-group margin-bottom-md">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                    <input type="text" class="form-control" id="nome" name="nome" required placeholder="Informe seu Nome">                                        
-                                </div>
-        
-                                <div class="input-group margin-bottom-md">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                    <input type="email" class="form-control" id="email" name="email" placeholder="Informe seu E-mail" required>                                        
-                                </div>
-        
-                                <div class="input-group margin-bottom-md">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                    <input type="text" class="form-control" id="redeSocial" name="redeSocial" required placeholder="Informe sua rede social">                                        
-                                </div>
-                                    
-                                <div class="input-group margin-bottom-md">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                    <input type="date" class="form-control" id="dataDeNascimento" name="dataDeNascimento" required placeholder="Informe sua data de nascimento">
-                                </div>
+    <script type="text/javascript" src="../cordova.js"></script>
+    <script type="text/javascript" src="../js/login.js"></script>
+</body>
 
-                                <div class="input-group margin-bottom-md">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                    <input type="text" class="form-control" id="cookie" name="cookie" required placeholder="Informe sua data de nascimento">
-                                </div>
-                                        
-                                <div class="form-group margin-top-pq">
-                                    <div class="col-sm-12 controls">
-                                        <button type="button" class="btn btn-primary" name="btn-login" id="btn-login">
-                                          Entrar
-                                        </button>
-                                    </div>
-                                </div> 
-         
-                            </form>     
-                        </div>  
-         
-                    </div>  
-                </div>
-            </div> 
-
-        <script type="text/javascript" src="../cordova.js"></script>
-        <script type="text/javascript" src="../js/login.js"></script>
-    </body>
 </html>
