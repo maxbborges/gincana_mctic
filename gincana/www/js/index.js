@@ -80,6 +80,8 @@ function verificaSessao(){
                 setTimeout(() => {window.location = 'paginas/index.html';}, 8000);
             } else {
                 console.log(data)
+                localStorage.setItem('usuario',data['usuario']);
+                localStorage.setItem('pontos',data['pontos']);
                 setTimeout(() => {window.location = 'paginas/home.html';}, 8000);
             }
         }

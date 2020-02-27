@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self' blob:* data: gap: http://* https://ssl.gstatic.com https://cdn.jsdelivr.net 'unsafe-eval'; style-src http://* 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:; connect-src *;worker-src *;">
+        content="default-src 'self' blob:* data: gap: script-src: http://* https://ssl.gstatic.com https://cdn.jsdelivr.net 'unsafe-eval'; style-src http://* 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:; connect-src *;worker-src *;">
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="viewport"
@@ -20,7 +20,6 @@
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
         crossorigin="anonymous"></script>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../js/home.js"></script>
     <script type="text/javascript" src="../js/footer.js"></script>
 
     <title>Hello World</title>
@@ -37,13 +36,13 @@
                 <span class="span_jogador">JOGADOR</span>
             </div>
             <div id="div_span_usuario">
-                <span class="nome_usuario">LEANDRO</span>
+                <span class="nome_usuario"></span>
             </div>
             <div id="div_titulo_pontos">
                 <span class="span_titulo_pontos">TOTAL DE PONTOS</span>
             </div>
             <div id="div_pontos">
-                <span id="span_pontos" class="span_pontos">15 PONTOS</span>
+                <span id="span_pontos" class="span_pontos"></span>
             </div>
         </div>
         <div id="div_btn_home">
@@ -56,5 +55,8 @@
         </div>
     </div>
     <div id="footer"></div>
+    <script type="text/javascript" src="../cordova.js"></script>
+    <script type="text/javascript" src="../js/home.js"></script>
+
 </body>
 </html>

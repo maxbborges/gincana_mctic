@@ -1,6 +1,4 @@
-
- $("#footer").load("footer.html"); 
-
+$("#footer").load("footer.html"); 
 
 document.getElementById("cookie").setAttribute('value', ((document.cookie).split("="))[1]);
 document.querySelector("#btn-login").addEventListener("click", function() {
@@ -17,13 +15,9 @@ function login(){
         success:  function(response){
             // console.log(response);
             if(response['status'] == 0){
-                console.log('erro');
-                console.log(response);
-                // setTimeout(() => {window.location = 'inicial.html';}, 2000);
-                // $("#btn-login").html('Entrar');
-            //     $("#login-alert").css('display', 'none')
-            //     window.location.href = "home.php";
+                alert("Preencha todos os campos!");
             } else {
+                // localStorage.setItem('usuario',response['nome']);
                 console.log('carregando!');
                 setTimeout(() => {window.location = 'home.html';}, 7000);
             }
