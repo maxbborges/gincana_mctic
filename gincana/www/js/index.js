@@ -77,10 +77,10 @@ function verificaSessao(){
         success: function(data, textStatus, jqXHR){
             console.log(data);
             if(data['status']==0){
-                // setTimeout(() => {window.location = 'paginas/index.html';}, 8000);
+                setTimeout(() => {window.location = 'paginas/index.html';}, 8000);
             } else {
                 console.log(data)
-                // setTimeout(() => {window.location = 'paginas/home.html';}, 8000);
+                setTimeout(() => {window.location = 'paginas/home.html';}, 8000);
             }
         }
     });
