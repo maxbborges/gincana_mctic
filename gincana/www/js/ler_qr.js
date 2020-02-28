@@ -1,6 +1,7 @@
 if (localStorage.getItem('pontos')&&localStorage.getItem('usuario')){
     window.addEventListener("load", function(){
         setTimeout(() => {window.QRScanner.prepare(onDone);}, 200);
+
     });
     
     function onDone(err, status){ 
@@ -9,12 +10,16 @@ if (localStorage.getItem('pontos')&&localStorage.getItem('usuario')){
             console.error(err);
         }
         if (status.authorized) {
-            var elements = document.getElementsByClassName('blink')
+            var elements = document.getElementsByClassName('qrcode_apagar')
     
             for (var i = 0; i < elements.length; i++){
                 elements[i].style.display = 'none';
             }
             window.QRScanner.show(function(status){
+                setTimeout(() => {
+                    QRScanner.getStatus(function(status){
+                    console.log(status);
+                  })}, 200);
                 window.QRScanner.scan(displayContents);
             });
     

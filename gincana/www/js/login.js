@@ -17,8 +17,9 @@ function login(){
             if(response['status'] == 0){
                 alert("Preencha todos os campos!");
             } else {
-                // localStorage.setItem('usuario',response['nome']);
-                console.log('carregando!');
+                localStorage.setItem('usuario',response['usuario']);
+                localStorage.setItem('pontos',response['pontos']);
+                // console.log('carregando!');
                 setTimeout(() => {window.location = 'home.html';}, 7000);
             }
         }
