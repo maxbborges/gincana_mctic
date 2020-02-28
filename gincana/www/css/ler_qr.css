@@ -7,3 +7,7 @@
 
 }
 
+video#cordova-plugin-qrscanner-video-preview {
+    max-width: 100%;
+}
+
