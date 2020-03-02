@@ -22,6 +22,7 @@
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
         crossorigin="anonymous"></script>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/instascan.min.js" ></script>
     
     <script type="text/javascript" src="../js/footer.js"></script>
     <script type="text/javascript" src="../js/header.js"></script>
@@ -32,13 +33,24 @@
 <body>
     <div id="header"></div>
     <div class="clearfix"></div>
-    <div class='blink'>
+
+    <div id="div_qr_screen">
+        <video id="preview"></video>
+    </div>
+    <div class="clearfix"></div>
+    <div class="btn_voltar_qr">
+        <button type="button" class="btn btn_inicio" id="btn_voltar_qr">VOLTAR</button>
+    </div>   
+    
+     
+    <!-- <div class='blink'> -->
+        
         <!-- <a id="prepare">QR Scanner</a> -->
-        <button type="button" id="prepare" class="btn_troca_pontos">QR Scanner</button>
+        <!-- <button type="button" id="prepare" class="btn_troca_pontos">QR Scanner</button> -->
     <!-- <a id="show">QR Show</a>
     <a id="scan">QR Scan</a> -->
     
-    </div>
+    <!-- </div> -->
     <div id="footer"></div>
 
     <script type="text/javascript" src="../cordova.js"></script>
