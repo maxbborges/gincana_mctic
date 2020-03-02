@@ -35,14 +35,14 @@
     $resultado = mysqli_query($link, $sql);
     if($resultado){
         while($rg = mysqli_fetch_array($resultado, MYSQLI_ASSOC)){
-            $return['atividades'][$rg['id_atividade']]['id_atividade'] = $rg['id_atividade'];
-            $return['atividades'][$rg['id_atividade']]['codigo'] = $rg['codigo'];
-            $return['atividades'][$rg['id_atividade']]['id_tipo_atividade'] = $rg['id_tipo_atividade'];
-            $return['atividades'][$rg['id_atividade']]['desc_atividade'] = $rg['desc_atividade'];
-            $return['atividades'][$rg['id_atividade']]['pontos']= $rg['pontos'];
+            $return['atividades'][$rg['codigo']]['id_atividade'] = $rg['id_atividade'];
+            $return['atividades'][$rg['codigo']]['codigo'] = $rg['codigo'];
+            $return['atividades'][$rg['codigo']]['id_tipo_atividade'] = $rg['id_tipo_atividade'];
+            $return['atividades'][$rg['codigo']]['desc_atividade'] = $rg['desc_atividade'];
+            $return['atividades'][$rg['codigo']]['pontos']= $rg['pontos'];
             if($rg['id_alternativa'] != NULL){
-                $return['atividades'][$rg['id_atividade']]['alternativas'][$rg['id_alternativa']]['desc_alternativa'] = $rg['desc_alternativa'];
-                $return['atividades'][$rg['id_atividade']]['alternativas'][$rg['id_alternativa']]['resposta_certa'] = $rg['resposta_certa'];
+                $return['atividades'][$rg['codigo']]['alternativas'][$rg['id_alternativa']]['desc_alternativa'] = $rg['desc_alternativa'];
+                $return['atividades'][$rg['codigo']]['alternativas'][$rg['id_alternativa']]['resposta_certa'] = $rg['resposta_certa'];
             }
 
         }        
