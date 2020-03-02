@@ -5,7 +5,7 @@
 <head>
 
     <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self' blob: data: gap: http://* https://ssl.gstatic.com https://cdn.jsdelivr.net 'unsafe-eval'; style-src http://* 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:; connect-src *;worker-src http://localhost:8000/*;">
+        content="default-src 'self' blob: data: gap: http://* https://ssl.gstatic.com https://cdn.jsdelivr.net 'unsafe-eval'; style-src http://* 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:; connect-src *;worker-src http://localhost:8000/*;script-src https://cdn.jsdelivr.net/ http://localhost/;">
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="viewport"
@@ -29,9 +29,7 @@
 <body>
 
     <div class="container">
-        <div class='blink'>
-            <a id="prepare1">QR Scanner</a>
-        </div>
+        <button type="button" class="btn btn_inicio" name="btn-login" id="deletar_cookie">DELETAR COOKIE</button>
         <!-- <div id="div_form_login">
             <div class="div_logo_gincana">
                 <img src="../img/logo_gincana_wide.png" class="logo_gincana_login" />

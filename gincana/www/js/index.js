@@ -9,8 +9,9 @@ var app = {
         // document.getElementsByTagName("body")[0].setAttribute('style', 'display:none;');
         verificaSessao();
 
-        document.querySelector("#prepare1").addEventListener("click", function() {
-            window.QRScanner.prepare(onDone);
+        document.querySelector("#deletar_cookie").addEventListener("click", function() {
+            document.cookie ='PHPSESSID=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+            console.log('limpo');
         });
     },
 
@@ -41,14 +42,12 @@ function verificaSessao(){
         url: "http://localhost/",
         dataType: 'jsonp',
         success: function(data, textStatus, jqXHR){
-            console.log(data);
             if(data['status']==0){
-                setTimeout(() => {window.location = 'paginas/index.html';}, 8000);
+                setTimeout(() => {window.location = 'paginas/index.html';}, 2000);
             } else {
-                console.log(data)
                 localStorage.setItem('usuario',data['usuario']);
                 localStorage.setItem('pontos',data['pontos']);
-                setTimeout(() => {window.location = 'paginas/home.html';}, 8000);
+                setTimeout(() => {window.location = 'paginas/home.html';}, 2000);
             }
         }
     });
