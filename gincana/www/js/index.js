@@ -45,7 +45,7 @@ function verificaSessao(){
             if(data['status']==0){
                 setTimeout(() => {window.location = 'paginas/index.html';}, 8000);
             } else {
-                console.log(data);
+                console.log(data)
                 localStorage.setItem('usuario',data['usuario']);
                 localStorage.setItem('pontos',data['pontos']);
                 setTimeout(() => {window.location = 'paginas/home.html';}, 8000);

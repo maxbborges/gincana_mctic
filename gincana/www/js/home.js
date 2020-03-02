@@ -9,3 +9,6 @@
 //     alert('Crie o cadastro para continuar!');
 //     window.location = 'index.html';
 // }
+
+var atividades = JSON.parse(window.localStorage.getItem('atividades'));
+console.log(atividades);

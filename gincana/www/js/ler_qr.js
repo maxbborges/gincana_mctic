@@ -21,6 +21,9 @@ $("#btn_voltar_qr").click(function () {
     window.location.href = '../paginas/home.html';
 });
 
+var atividades = JSON.parse(window.localStorage.getItem('atividades'));
+console.log(atividades);
+
 buscarAtividades('MCTIC0009');
 
 function buscarAtividades(id_qr){

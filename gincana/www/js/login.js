@@ -13,14 +13,14 @@ function login(){
         data : $("#login-form").serialize(),
         dataType: 'json',
         success:  function(response){
-            // console.log(response);
-            if(response['status'] == 0){
+            console.log(response);
+            if(response['login']['status'] == 0){
                 alert("Preencha todos os campos!");
             } else {
-                localStorage.setItem('usuario',response['usuario']);
-                localStorage.setItem('pontos',response['pontos']);
-                // console.log('carregando!');
-                setTimeout(() => {window.location = 'home.html';}, 7000);
+                localStorage.setItem('atividades', JSON.stringify(response['atividades']));
+                localStorage.setItem('usuario',response['login']['usuario']);
+                localStorage.setItem('pontos',response['login']['pontos']);
+                window.location = 'home.html';                
             }
         }
         // beforeSend: function(xhr) {
