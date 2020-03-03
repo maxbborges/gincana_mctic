@@ -1,3 +1,4 @@
+console.log(window.localStorage);
 // if (localStorage.getItem('pontos')&&localStorage.getItem('usuario')){
     $(".nome_usuario").text(localStorage.getItem('usuario'));
     $(".span_pontos").text(localStorage.getItem('pontos'));

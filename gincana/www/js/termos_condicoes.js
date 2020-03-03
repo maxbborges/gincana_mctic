@@ -1,15 +1,16 @@
-if (localStorage.getItem('userInfo')==null){
-    window.location = 'index.html';
-} else {
-    document.querySelector("#btn_aceitar_termos").addEventListener("click", function() {
-        login();
-    });
-    
-    document.querySelector("#btn_cancelar_termos").addEventListener("click", function() {
-        localStorage.clear();
-        window.location = 'index.html';
-    });
+var cookieLocal;
+if ((window.localStorage.getItem('usuario'))!=null){
+    $(".nome_usuario").text(window.localStorage.getItem('usuario'));
 }
+
+document.querySelector("#btn_aceitar_termos").addEventListener("click", function() {
+    login();
+});
+    
+document.querySelector("#btn_cancelar_termos").addEventListener("click", function() {
+    localStorage.clear();
+    window.location = 'index.html';
+});
 
 function login(){
     $.ajax({
