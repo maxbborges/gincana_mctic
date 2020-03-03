@@ -21,8 +21,6 @@ if ((window.localStorage.getItem('usuario')!=null&&window.localStorage.getItem('
     if (window.location['pathname']!='/paginas/index.html'&&
         window.location['pathname']!='/paginas/termos_condicoes.html'){
             verificaSessao();
-    } else {
-        console.log(window.localStorage);
     }
 }
 

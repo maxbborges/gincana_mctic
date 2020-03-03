@@ -12,7 +12,6 @@ scanner.addListener('scan', function(content) {
 Instascan.Camera.getCameras().then(cameras => 
 {
     if(cameras.length > 0){
-        console.log(window.localStorage);
         if(typeof(cameras[1]) != "undefined") {
             scanner.start(cameras[1]);
         } else {
