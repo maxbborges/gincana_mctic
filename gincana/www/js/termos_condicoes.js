@@ -25,6 +25,7 @@ function login(){
                 localStorage.setItem('atividades', JSON.stringify(response['atividades']));
                 localStorage.setItem('usuario',response['login']['usuario']);
                 localStorage.setItem('pontos',response['login']['pontos']);
+                localStorage.setItem('id',response['login']['id']);
                 window.location = 'home.html';
             }
         }

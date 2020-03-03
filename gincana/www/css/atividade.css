@@ -1,6 +1,6 @@
 @media screen and (min-width:200px) and (max-width:900px) {
 
-    #atividade_1, #atividade_2{
+    #atividade_1, #atividade_2, #div_warning, #div_ganha_pontos{
         display: none;
     }
 
@@ -68,6 +68,39 @@
         font-style: normal;
         font-weight: normal;
         font-size: 24px;
+        line-height: 28px;
+        color: #134663;
+    }
+
+    #bar_buttons_pontos button{
+        width: 180px;
+        margin-bottom: 7px;
+    }
+
+    #div_ganha_pontos{
+        text-align: center;
+    }
+
+    #resposta_certa{
+        margin-top: 55px;
+    }
+
+    #div_mensagem{
+        margin-top: 100px;
+    }
+
+    #div_pontos_ganhos{
+        margin-top: 39px;
+    }
+
+    #bar_buttons_pontos{
+        margin-top: 72px;
+    }
+
+    #resposta_certa, #div_mensagem, #div_pontos_ganhos, #bar_buttons_pontos{
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
         line-height: 28px;
         color: #134663;
     }
