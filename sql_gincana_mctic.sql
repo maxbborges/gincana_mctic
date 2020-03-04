@@ -12,8 +12,8 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   PRIMARY KEY (`id`)
 ) ;
 
-DROP TABLE IF EXISTS `tipo_atividade`;
-CREATE TABLE IF NOT EXISTS `tipo_atividade` (
+DROP TABLE IF EXISTS `tipo_qr`;
+CREATE TABLE IF NOT EXISTS `tipo_qr` (
   `id` smallint(6) NOT NULL AUTO_INCREMENT,
   `descricao` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -23,11 +23,11 @@ DROP TABLE IF EXISTS `atividade`;
 CREATE TABLE IF NOT EXISTS `atividade` (
   `id` smallint(6) NOT NULL AUTO_INCREMENT,
   `codigo` varchar(20) DEFAULT NULL,
-  `id_tipo_atividade` smallint(1) DEFAULT NULL,
+  `id_tipo_qr` smallint(1) DEFAULT NULL,
   `descricao` varchar(500) DEFAULT NULL,
   `pontos` smallint(6) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  FOREIGN KEY `FK_id_tipo_atividade_tb_atividade` (`id_tipo_atividade`) REFERENCES tipo_atividade (id)
+  FOREIGN KEY `FK_id_tipo_qr_tb_atividade` (`id_tipo_qr`) REFERENCES tipo_qr (id)
 ) ;
 
 DROP TABLE IF EXISTS `alternativas_quiz`;
@@ -44,10 +44,12 @@ DROP TABLE IF EXISTS `premio`;
 CREATE TABLE IF NOT EXISTS `premio` (
   `id` smallint(6) NOT NULL AUTO_INCREMENT,
   `codigo` varchar(20) DEFAULT NULL,
+  `id_tipo_qr` smallint(1) DEFAULT NULL,
   `descricao` varchar(100) DEFAULT NULL,
   `estoque` smallint(6) DEFAULT NULL,
   `pontos` smallint(6) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  FOREIGN KEY `FK_id_tipo_qr_tb_premio` (`id_tipo_qr`) REFERENCES tipo_qr (id)
 ) ;
 
 DROP TABLE IF EXISTS `realiza_atividade`;
@@ -71,6 +73,15 @@ CREATE TABLE IF NOT EXISTS `resgata_premio` (
   PRIMARY KEY (`id`)
 ) ;
 
+DROP TABLE IF EXISTS `qr_finaliza_atividade`;
+CREATE TABLE IF NOT EXISTS `qr_finaliza_atividade` (
+  `id` smallint(6) NOT NULL AUTO_INCREMENT,
+  `codigo` varchar(20) DEFAULT NULL,
+  `id_tipo_qr` smallint(1) DEFAULT NULL,
+  `finaliza_atividade` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  FOREIGN KEY `FK_id_tipo_qr_tb_qr_finaliza_atividade` (`id_tipo_qr`) REFERENCES tipo_qr (id)
+) ;
 
 
 

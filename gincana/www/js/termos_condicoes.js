@@ -23,7 +23,11 @@ function login(){
             if(response['login']['status'] == 0){
                 alert("Preencha todos os campos!");
             } else {
+                localStorage.setItem('todos_qr', JSON.stringify(response['todos_qr']));
                 localStorage.setItem('atividades', JSON.stringify(response['atividades']));
+                localStorage.setItem('premios', JSON.stringify(response['premios']));
+                localStorage.setItem('qr_finaliza', JSON.stringify(response['qr_finaliza']));
+
                 localStorage.setItem('usuario',response['login']['usuario']);
                 localStorage.setItem('pontos',response['login']['pontos']);
                 localStorage.setItem('id',response['login']['id']);

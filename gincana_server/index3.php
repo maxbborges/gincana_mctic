@@ -21,14 +21,27 @@
         // echo json_encode(array('status'=>0, 'outros'=>$_POST));
     }
 
+    //TODOS OS QR CODE
+    $sql = "SELECT codigo, id_tipo_qr FROM atividade
+            UNION ALL
+            SELECT codigo, id_tipo_qr FROM premio
+            UNION ALL
+            SELECT codigo, id_tipo_qr FROM qr_finaliza_atividade;";
+    $resultado = mysqli_query($link, $sql);
+    if($resultado){
+        while($rg = mysqli_fetch_array($resultado, MYSQLI_ASSOC)){
+            $return['todos_qr'][$rg['codigo']] = $rg['id_tipo_qr'];
+        }        
+    }
+
     //BUSCANDO ATIVIDADES
-    $sql = "SELECT a.id as id_atividade, codigo, id_tipo_atividade, a.descricao as desc_atividade, pontos, q.id as id_alternativa, id_quiz, q.descricao as desc_alternativa, resposta_certa 
+    $sql = "SELECT a.id as id_atividade, codigo, id_tipo_qr, a.descricao as desc_atividade, pontos, q.id as id_alternativa, id_quiz, q.descricao as desc_alternativa, resposta_certa 
             FROM atividade a 
             LEFT JOIN alternativas_quiz q ON a.id = q.id_quiz 
             
             UNION ALL 
             
-            SELECT a.id as id_atividade, codigo, id_tipo_atividade, a.descricao as desc_atividade, pontos, q.id as id_alternativa, id_quiz, q.descricao as desc_alternativa, resposta_certa
+            SELECT a.id as id_atividade, codigo, id_tipo_qr, a.descricao as desc_atividade, pontos, q.id as id_alternativa, id_quiz, q.descricao as desc_alternativa, resposta_certa
             FROM atividade a 
             RIGHT JOIN alternativas_quiz q ON a.id = q.id_quiz;";
             
@@ -37,7 +50,7 @@
         while($rg = mysqli_fetch_array($resultado, MYSQLI_ASSOC)){
             $return['atividades'][$rg['codigo']]['id_atividade'] = $rg['id_atividade'];
             $return['atividades'][$rg['codigo']]['codigo'] = $rg['codigo'];
-            $return['atividades'][$rg['codigo']]['id_tipo_atividade'] = $rg['id_tipo_atividade'];
+            $return['atividades'][$rg['codigo']]['id_tipo_qr'] = $rg['id_tipo_qr'];
             $return['atividades'][$rg['codigo']]['desc_atividade'] = $rg['desc_atividade'];
             $return['atividades'][$rg['codigo']]['pontos']= $rg['pontos'];
             if($rg['id_alternativa'] != NULL){
@@ -45,6 +58,30 @@
                 $return['atividades'][$rg['codigo']]['alternativas'][$rg['id_alternativa']]['resposta_certa'] = $rg['resposta_certa'];
             }
 
+        }        
+    }
+
+    //BUCANDO PRÊMIOS
+    $sql = "SELECT * FROM premio";
+    
+    $resultado = mysqli_query($link, $sql);
+    if($resultado){
+        while($rg = mysqli_fetch_array($resultado, MYSQLI_ASSOC)){
+            $return['premios'][$rg['codigo']]['id_tipo_qr'] = $rg['id_tipo_qr'];
+            $return['premios'][$rg['codigo']]['descricao'] = $rg['descricao'];
+            $return['premios'][$rg['codigo']]['estoque'] = $rg['estoque'];
+            $return['premios'][$rg['codigo']]['pontos'] = $rg['pontos'];
+        }        
+    }
+
+    //BUSCANDO QR CODE DE FINALIZAÇÃO DE ATIVIDADES
+    $sql = "SELECT * FROM qr_finaliza_atividade";
+    
+    $resultado = mysqli_query($link, $sql);
+    if($resultado){
+        while($rg = mysqli_fetch_array($resultado, MYSQLI_ASSOC)){
+            $return['qr_finaliza'][$rg['codigo']]['id_tipo_qr'] = $rg['id_tipo_qr'];
+            $return['qr_finaliza'][$rg['codigo']]['finaliza_atividade'] = $rg['finaliza_atividade'];
         }        
     }
 

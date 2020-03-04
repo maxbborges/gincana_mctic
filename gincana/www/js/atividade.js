@@ -5,7 +5,7 @@ $(document).ready( function () {
     const urlParams = new URLSearchParams(queryString);
     const codigo_qr = urlParams.get('qr');
 
-    var tipo_atividade = atividades[codigo_qr]['id_tipo_atividade'];
+    var tipo_atividade = atividades[codigo_qr]['id_tipo_qr'];
     var pontos = 0;
 
     if(tipo_atividade != undefined){
