@@ -8,56 +8,68 @@ $(document).ready(function () {
     const tipo_qr = urlParams.get('tipo');
 
     var pontos = 0;
+    var id_atividade = 0;
+    var disponibilidade = verificaDisponibilidade(codigo_qr);
+
 
     if (tipo_qr == 1) { //ATIVIDADE FÍSICA
         pontos = atividades[codigo_qr]['pontos'];
 
-        $("#atividade_1").show();
-        $("#atividade_2").hide();
-        $("#div_warning").hide();
-        $("#div_ganha_pontos").hide();
+        if(disponibilidade){
+            $("#atividade_1").show();
+            $("#atividade_2").hide();
+            $("#div_warning").hide();
+            $("#div_ganha_pontos").hide();
 
-        $("#div_desc_atividade_fisico p").html(atividades[codigo_qr]['desc_atividade'] + ". <br>(este desafio deve ser validado pelo monitor para obter pontuação)");
+            $("#div_desc_atividade_fisico p").html(atividades[codigo_qr]['desc_atividade'] + ". <br>(este desafio deve ser validado pelo monitor para obter pontuação)");
+        }
+        
         
     } else if (tipo_qr == 2) { //ATIVIDADE QUIZ
         var alternativa = "";
         var resposta_certa = "";
         var checked = "";
         var count = 1;
-        pontos = atividades[codigo_qr]['pontos']; 
 
-        $("#atividade_1").hide();
-        $("#atividade_2").show();
-        $("#div_warning").hide();
-        $("#div_ganha_pontos").hide();        
+        pontos = atividades[codigo_qr]['pontos'];         
 
-        $("#div_desc_atividade_quiz p").html(atividades[codigo_qr]['desc_atividade']);               
+        if(disponibilidade){
 
-        $.each(atividades[codigo_qr]['alternativas'], function (i, item) {
-            alternativa = atividades[codigo_qr]['alternativas'][i].desc_alternativa;
-            resposta = atividades[codigo_qr]['alternativas'][i].resposta_certa;
+            $("#atividade_1").hide();
+            $("#atividade_2").show();
+            $("#div_warning").hide();
+            $("#div_ganha_pontos").hide();        
 
-            if (resposta === 'S') {
-                resposta_certa = alternativa;
-            }
+            $("#div_desc_atividade_quiz p").html(atividades[codigo_qr]['desc_atividade']);               
 
-            if (count == 1) {
-                checked = 'checked';
-            }
+            $.each(atividades[codigo_qr]['alternativas'], function (i, item) {
+                alternativa = atividades[codigo_qr]['alternativas'][i].desc_alternativa;
+                resposta = atividades[codigo_qr]['alternativas'][i].resposta_certa;
 
-            $("#alternativas_quiz").append(
-                '<input class="form-check-input" type="radio" name="alternativaQuiz" id="alternativa_' + i + '" value="option1" ' + checked + '>\n\
-                 <label class="form-check-label label_alternativa" for="alternativa_'+ i + '">\n\
-                    '+ alternativa + '\n\
-                 </label><br>');
+                if (resposta === 'S') {
+                    resposta_certa = alternativa;
+                }
 
-            count++;
-            checked = "";
-        });
+                if (count == 1) {
+                    checked = 'checked';
+                }
+
+                $("#alternativas_quiz").append(
+                    '<input class="form-check-input" type="radio" name="alternativaQuiz" id="alternativa_' + i + '" value="option1" ' + checked + '>\n\
+                    <label class="form-check-label label_alternativa" for="alternativa_'+ i + '">\n\
+                        '+ alternativa + '\n\
+                    </label><br>');
+
+                count++;
+                checked = "";
+            });
+            
+        }
 
     } else if (tipo_qr == 4) { //QR FINALIZA ATIVIDADE
         
         var atividade_finaliza = qr_finaliza[codigo_qr].finaliza_atividade;
+        var id_atividade = atividades[atividade_finaliza]['id_atividade'];
         pontos = atividades[atividade_finaliza]['pontos'];
 
         $("#atividade_1").hide();
@@ -68,7 +80,7 @@ $(document).ready(function () {
 
         $("#div_pontos_ganhos .span_pontuacao").html('<strong>' + pontos + '</strong>');
 
-        enviaPontuacao(pontos);
+        enviaPontuacao(pontos, id_atividade);
     }
 
 
@@ -81,18 +93,20 @@ $(document).ready(function () {
     });
 
     $("#btn_seguinte_quiz").click(function () {
+        var id_atividade = atividades[codigo_qr]['id_atividade'];
+
         $("#atividade_2").hide();
         $("#div_ganha_pontos").show();
 
         $("#resposta_certa").append(resposta_certa);
-        $("#div_pontos_ganhos .span_pontuacao").html('<strong>' + pontos + '</strong>');
+        $("#div_pontos_ganhos .span_pontuacao").html('<strong>' + pontos + '</strong>');        
 
-        enviaPontuacao(pontos);
+        enviaPontuacao(pontos, id_atividade);
     });
 });
 
 //CONTABILIZA A PONTUAÇÃO PARA O USUARIO
-function enviaPontuacao(pontos) {
+function enviaPontuacao(pontos, id_atividade) {
 
     var id_usuario = window.localStorage.getItem('id');
 
@@ -100,7 +114,7 @@ function enviaPontuacao(pontos) {
         method: "POST",
         dataType: 'json',
         url: "http://localhost/atividade.php",
-        data: { 'opcao': 'enviarPontuacao', 'id_usuario': id_usuario, 'pontos': pontos },
+        data: { 'opcao': 'enviarPontuacao', 'id_usuario': id_usuario, 'pontos': pontos, 'id_atividade': id_atividade },
         success: function (data) {
             localStorage.setItem('pontos', data['pontos']);
         }
@@ -108,8 +122,8 @@ function enviaPontuacao(pontos) {
 }
 
 //VERIFICA SE O USUARIO JÁ FEZ A ATIVIDADE
-function verificaDisponibilidade(){
-
+function verificaDisponibilidade(codigo_qr){
+    return true;
 }
 
 

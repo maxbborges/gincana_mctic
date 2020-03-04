@@ -37,7 +37,7 @@ function verificaQr(content){
         //troca de pontos
         window.location.href = '../paginas/troca_pontos.html?qr=' + content;
     } else {
-        window.location.href = '../paginas/home.html?';
+        window.location.href = '../paginas/home.html';
     }
 
 }
