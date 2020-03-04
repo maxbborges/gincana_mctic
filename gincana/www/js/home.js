@@ -6,6 +6,6 @@ $("#btn_ler_qr").click( function () {
     window.location.href = 'ler_qr.html';
 });
 
-$("#btn_ler_qr").click( function () {
+$("#btn_trocar_pontos").click( function () {
     window.location.href = 'troca_pontos.html';
 });
