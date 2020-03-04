@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self' blob:* data: gap: http://* https://ssl.gstatic.com https://cdn.jsdelivr.net 'unsafe-eval'; style-src http://* 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:; connect-src *;worker-src *;">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport"
+        content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/layout_2.css">
+    <link rel="stylesheet" type="text/css" href="../css/footer.css">
+    <link rel="stylesheet" type="text/css" href="../css/header.css">
+    <link rel="stylesheet" type="text/css" href="../css/troca_pontos.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+
+    <script src="../js/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/verifica_sessao.js"></script>
+    <script type="text/javascript" src="../js/footer.js"></script>
+    <script type="text/javascript" src="../js/header.js"></script>
+
+    <title>Hello World</title>
+</head>
+
+<body>
+    <div id="header"></div>
+        <div id="atividade_1">
+            <div class="div_titulo_atividade">
+                <span><strong>DESAFIO FÍSICO</strong></span>  
+            </div>
+            <div id="div_desc_atividade_fisico">
+                <p class="descricao_atividade"></p>  
+            </div>  
+            <div id="bar_buttons_atividade_1">
+                <button type="button" id="btn_seguinte_atividade" class="btn_inicio">SEGUINTE</button>
+            </div>        
+        </div>
+        <div id="atividade_2">
+            <div class="div_titulo_atividade">
+                <span><strong>QUIZ</strong></span>  
+            </div>
+            <div id="div_desc_atividade_quiz">
+                <p class="descricao_atividade"></p>  
+            </div>  
+            <div id="alternativas_quiz"></div>
+            <div id="bar_buttons_atividade_2">
+                <button type="button" id="btn_cancelar_quiz" class="btn_cancelar">CANCELAR</button>
+                <button type="button" id="btn_seguinte_quiz" class="btn_inicio">SEGUINTE</button>
+            </div> 
+        </div>   
+        <div id="div_warning"></div>
+        <div id="div_ganha_pontos">
+            <div id="resposta_certa"><strong>Resposta certa: </strong></div>
+            <div id="div_mensagem">
+                <span><strong>Parabéns!<br>Você ganhou</strong></span>
+            </div>
+            <div id="div_pontos_ganhos">
+                <span class="span_pontuacao"></span><br>
+                <span class="span_pontos">pontos</span>
+            </div>
+            <div id="bar_buttons_pontos">
+                <button type="button" id="btn_continuar_jogando" class="btn_inicio">CONTINUAR JOGANDO</button><br>
+                <button type="button" id="btn_trocar_pontos" class="btn_troca_pontos">TROCAR PONTOS</button>
+            </div>
+        </div>
+    <div id="footer"></div>
+
+    <script type="text/javascript" src="../cordova.js"></script>
+    <script type="text/javascript" src="../js/troca_pontos.js"></script>
+</body>
+
+</html>

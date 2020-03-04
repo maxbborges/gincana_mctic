@@ -28,27 +28,16 @@ $("#btn_voltar_qr").click(function () {
 
 function verificaQr(content){
     var arr_qr = JSON.parse(window.localStorage.getItem('todos_qr'));
+    var tipo = arr_qr[content];
 
-    switch (arr_qr[content]) {
-        case '1':
-            //atividade quiz
-            window.location.href = '../paginas/atividade.html?qr=' + content;
-            break;
-        case '2':
-            //atividade fisica
-            window.location.href = '../paginas/atividade.html?qr=' + content;
-            break;
-        case '3':
-            //troca de pontos
-            // window.location.href = '../paginas/troca_pontos.html?qr=' + content;
-            break;
-        case '4':
-            //finaliza atividade
-            
-            break;    
-        default:
-            window.location.href = '../paginas/home.html?';
-            break;
+    if(tipo == 1 || tipo == 2 || tipo == 4){
+        //atividade fisica, atividade quiz e finalização de atividade pelo monitor
+        window.location.href = '../paginas/atividade.html?qr=' + content + '&tipo=' + arr_qr[content];
+    } else if( tipo == 3){
+        //troca de pontos
+        window.location.href = '../paginas/troca_pontos.html?qr=' + content;
+    } else {
+        window.location.href = '../paginas/home.html?';
     }
 
 }

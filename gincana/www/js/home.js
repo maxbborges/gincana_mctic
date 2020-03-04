@@ -1,5 +1,11 @@
 $(".nome_usuario").text(localStorage.getItem('usuario'));
 $(".span_pontos").text(localStorage.getItem('pontos'));
-document.querySelector("#btn_ler_qr").addEventListener("click", function() {
-    window.location = 'ler_qr.html';
+
+
+$("#btn_ler_qr").click( function () {
+    window.location.href = 'ler_qr.html';
+});
+
+$("#btn_ler_qr").click( function () {
+    window.location.href = 'troca_pontos.html';
 });
