@@ -6,8 +6,8 @@
 - Entrar na pasta clonada e na pasta do projeto
 
         $ docker image build -t NOME_IMAGEM .
-        $ docker run -d -P -p X:80 -p X:8000 -p X:90 -p X:3001 -v "$PWD:/home/maxwell/projetos" --name NOME_PROJETO NOME_IMAGEM
-        $ docker exec -it -u maxwell bin/bash
+        $ docker run -d -P -p X:80 -p X:8000 -p X:90 -p X:3001 -v "$PWD/:/home/maxwell/projetos" --name NOME_PROJETO NOME_IMAGEM
+        $ docker exec -it -u maxwell [nome do container] bin/bash
         
 - Acesar a pasta do usuário
 
