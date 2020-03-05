@@ -1,3 +1,18 @@
+html {
+    height: 100%;
+}
+
+body{
+    height: 100%;
+    min-height: 700px;
+    min-width: 350px;
+}
+
+#geral{
+    min-height:100%;
+    position:relative;
+}
+
 @media screen and (min-width:200px) and (max-width:900px) {
     body {
         background-color:#134663;
@@ -13,8 +28,8 @@
 
     .div_logo_gincana {
         text-align: center;
-        margin-top: 58px;
-        margin-bottom: 31.11px;
+        padding-top: 58px;
+        padding-bottom: 31.11px;
     }
 
     .logo_gincana {
@@ -37,16 +52,6 @@
     .nome_usuario{
         font-size: 24px;
         color: white;
-    }
-
-    .footer{
-        position: absolute;
-        width: 100%;
-        height: 91px;
-        left: 0px;
-        top: 645px;
-        background: #00B3DE;
-        box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.25);
     }
 
     .btn_cancelar{

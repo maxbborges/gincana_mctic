@@ -1,3 +1,18 @@
+html {
+    height: 100%;
+}
+
+body{
+    height: 100%;
+    min-height: 700px;
+    min-width: 350px;
+}
+
+#geral{
+    min-height:100%;
+    position:relative;
+}
+
 @media screen and (min-width:200px) and (max-width:900px) {
     body {
         background-color: white;

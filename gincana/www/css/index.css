@@ -1,6 +1,8 @@
 
 @media screen and (min-width:200px) and (max-width:900px) {
-
+    body {
+        margin: 0;
+    }
     .form_input{
         width: 298px;
         height: 44px;
