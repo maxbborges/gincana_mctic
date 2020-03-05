@@ -14,6 +14,9 @@
         case 'retiraPontuacao':
             retiraPontuacao($link);
             break; 
+        case 'verificaFezAtividade':
+            verificaFezAtividade($link);
+            break; 
     }
 
 
@@ -60,6 +63,25 @@
         }
 
         $return['pontos'] = $pontuacao['pontos'];
+
+        echo json_encode($return);
+    }
+
+    function verificaFezAtividade($link){
+
+        $return['result'] = false;
+
+        $id_usuario  = filter_input(INPUT_POST, 'id_usuario', FILTER_DEFAULT);
+        $id_atividade  = filter_input(INPUT_POST, 'id_atividade', FILTER_DEFAULT);
+
+        $sql = "SELECT id FROM realiza_atividade WHERE id_usuario = {$id_usuario} AND id_atividade = {$id_atividade}";
+        $resultado = mysqli_query($link, $sql);
+
+        if($resultado){
+            if($resultado->num_rows > 0){
+                $return['result'] = true;
+            }            
+        }
 
         echo json_encode($return);
     }

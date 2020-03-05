@@ -105,7 +105,23 @@
         color: #134663;
     }
 
-    
+    #div_warning{
+        text-align: center;
+    }
+
+    #div_warning_span{
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 21px;
+        color: #134663;
+        margin-top: 250px;
+    }
+
+    #btn_warning{
+        margin-top: 244px;
+        width: 100px;;
+    }
 
 
 }

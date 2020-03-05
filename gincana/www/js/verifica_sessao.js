@@ -40,7 +40,7 @@ function verificaSessao(){
                 localStorage.setItem('usuario',data['usuario']);
                 localStorage.setItem('pontos',data['pontos']);
                 localStorage.setItem('status',data['status']);
-                localStorage.setItem('id',data['id']);
+                // localStorage.setItem('id',data['id']);
                 if (window.location['href']==(window.location['origin']+'/')){
                     window.location = 'paginas/home.html';
                 } else {

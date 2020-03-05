@@ -67,6 +67,7 @@
     $resultado = mysqli_query($link, $sql);
     if($resultado){
         while($rg = mysqli_fetch_array($resultado, MYSQLI_ASSOC)){
+            $return['premios'][$rg['codigo']]['id_premio'] = $rg['id'];
             $return['premios'][$rg['codigo']]['id_tipo_qr'] = $rg['id_tipo_qr'];
             $return['premios'][$rg['codigo']]['descricao'] = $rg['descricao'];
             $return['premios'][$rg['codigo']]['estoque'] = $rg['estoque'];
