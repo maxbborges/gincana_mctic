@@ -13,6 +13,21 @@
         margin-bottom: 7px;
     }
 
+    .title_form{
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 24px;
+        color: #FFCB06;        
+    }
+
+    .group_form{
+        margin-left: auto;
+        margin-right: auto;
+        width: 290px;
+        margin-bottom: 10px;
+    }
+
     #btn-login{
         width: 99px;
     }
@@ -22,7 +37,7 @@
     }
 
     #div_form_login{
-        text-align: center;
+        /* text-align: center; */
     }
 
     .div_btn_login{

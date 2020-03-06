@@ -38,6 +38,24 @@
         margin-top: 33px;
     }
 
+    #link_sair{
+        margin-top: 15px;
+        text-align: center;
+    }
+
+    #span_link_sair{
+        font-style: italic;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 24px;
+        text-decoration-line: underline;
+        color: #FFCB06;
+    }
+
+    #confirma_sair{
+        width: 91px;
+    }
+
 
 }
 

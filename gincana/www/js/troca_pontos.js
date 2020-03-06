@@ -19,7 +19,7 @@ $(document).ready(function () {
         url: "http://localhost/troca_pontos.php",
         data: { 'opcao': 'verificaTroca', 'id_usuario': id_usuario, 'id_premio': id_premio, 'pontos': pontos},
         success: function (data) {
-console.log(data);
+
             if (data['result'] == 1) {
 
                 $("#div_ganhou_premio").show();

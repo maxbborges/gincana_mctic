@@ -4,6 +4,27 @@
         background-color: transparent;
     }
 
+    #title_ler_qr{
+        text-align: center;
+        margin-top: 37px;
+        margin-bottom: 18px;
+    }
+
+    #div_image_load{
+        text-align: center;
+    }
+
+    #img_load_qr{
+        height: 100px;
+    }
+
+    #title_ler_qr .span_title_qr{
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        color: #134663;
+    }
+
     #div_load{
         text-align: center;
         vertical-align: middle;
@@ -15,16 +36,13 @@
     }
 
     #div_qr_screen{
+        display: none;
         width: 300px;
         height: 200px; 
     }
 
     video#preview{
         max-width: 100%;
-    }
-
-    #btn_voltar_qr{
-        /* margin-top: 308px; */
     }
 
 }

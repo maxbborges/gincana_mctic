@@ -33,15 +33,9 @@
                 //VERIFICA SE TEM PONTOS SUFICIENTES
                 $pontos_usuario = verificaPontos($link, $id_usuario);
 
-                $return['ddd'] = $pontos_usuario;
-                $return['ppp'] = $pontos;
-
-                if((int)$pontos_usuario > (int)$pontos){
+                if((int)$pontos_usuario >= (int)$pontos){
                     //REGISTRANDO A ATIVIDADE FEITA
                     $sql = "INSERT INTO resgata_premio (id_usuario, id_premio) VALUES ({$id_usuario}, {$id_premio})";
-                    mysqli_query($link, $sql);
-                    
-                    $sql = "UPDATE usuario SET pontos = pontos - {$pontos} WHERE id = {$id_usuario}";
                     mysqli_query($link, $sql);
 
                     $return['result'] = 1;

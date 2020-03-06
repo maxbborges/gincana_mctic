@@ -114,8 +114,7 @@ $(document).ready(function () {
 
         $("#atividade_2").hide();
         $("#div_ganha_pontos").show();
-
-        $("#resposta_certa").append(resposta_certa);
+        
         $("#div_pontos_ganhos .span_pontuacao").html('<strong>' + pontos + '</strong>');
 
         enviaPontuacao(pontos, id_atividade);
@@ -157,7 +156,7 @@ function atividadeQuiz(id_atividade, pontos) {
         resposta = atividades[codigo_qr]['alternativas'][i].resposta_certa;
 
         if (resposta === 'S') {
-            res_certa = alternativa;
+            $("#resposta_certa").append(alternativa);
         }
 
         if (count == 1) {

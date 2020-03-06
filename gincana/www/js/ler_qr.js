@@ -12,13 +12,15 @@ scanner.addListener('scan', function(content) {
 Instascan.Camera.getCameras().then(cameras => 
 {
     if(cameras.length > 0){
-        if(typeof(cameras[1]) != "undefined") {
-            scanner.start(cameras[1]);
-        } else {
+        $("#img_load_qr").hide();
+        $("#div_qr_screen").show();
+        if (cameras.length == 1){
             scanner.start(cameras[0]);
-        }        
+        } else {
+            scanner.start(cameras[(cameras.length)-1]);
+        }       
     } else {
-        console.error("Não existe câmera no dispositivo!");
+        alert("Não existe câmera no dispositivo!");
     }
 });
 
