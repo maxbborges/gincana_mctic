@@ -1,3 +1,4 @@
+var endereco = window.location['hostname'];
 var cookieLocal;
 if ((window.localStorage.getItem('userInfo'))!=null){
     cookieLocal = (window.localStorage.getItem('userInfo')).match('(^|&) ?cookie=([^;]*)(;|$)');
@@ -27,7 +28,7 @@ if ((window.localStorage.getItem('usuario')!=null&&window.localStorage.getItem('
 function verificaSessao(){
     $.ajax({
         method: "GET",
-        url: "http://localhost/",
+        url: "http://"+endereco+"/",
         dataType: 'jsonp',
         success: function(data, textStatus, jqXHR){
             if(data['status']==0){

@@ -1,3 +1,4 @@
+var endereco = window.location['hostname'];
 $(document).ready(function () {
 
     const queryString = window.location.search;
@@ -23,7 +24,7 @@ $(document).ready(function () {
         $.ajax({
             method: "POST",
             dataType: 'json',
-            url: "http://localhost/atividade.php",
+            url: "http://"+endereco+"/atividade.php",
             data: { 'opcao': 'verificaFezAtividade', 'id_usuario': id_usuario, 'id_atividade': id_atividade },
             success: function (data) {
 
@@ -50,7 +51,7 @@ $(document).ready(function () {
         $.ajax({
             method: "POST",
             dataType: 'json',
-            url: "http://localhost/atividade.php",
+            url: "http://"+endereco+"/atividade.php",
             data: { 'opcao': 'verificaFezAtividade', 'id_usuario': id_usuario, 'id_atividade': id_atividade },
             success: function (data) {
                 if (!data['result']) {
@@ -75,7 +76,7 @@ $(document).ready(function () {
         $.ajax({
             method: "POST",
             dataType: 'json',
-            url: "http://localhost/atividade.php",
+            url: "http://"+endereco+"/atividade.php",
             data: { 'opcao': 'verificaFezAtividade', 'id_usuario': id_usuario, 'id_atividade': id_atividade },
             success: function (data) {
                 
@@ -127,7 +128,7 @@ function enviaPontuacao(pontos, id_atividade) {
     $.ajax({
         method: "POST",
         dataType: 'json',
-        url: "http://localhost/atividade.php",
+        url: "http://"+endereco+"/atividade.php",
         data: { 'opcao': 'enviarPontuacao', 'id_usuario': id_usuario, 'pontos': pontos, 'id_atividade': id_atividade },
         success: function (data) {
             localStorage.setItem('pontos', data['pontos']);

@@ -1,3 +1,4 @@
+var endereco = window.location['hostname'];
 $(document).ready(function () {
 
     const premios = JSON.parse(window.localStorage.getItem('premios'));
@@ -16,7 +17,7 @@ $(document).ready(function () {
     $.ajax({
         method: "POST",
         dataType: 'json',
-        url: "http://localhost/troca_pontos.php",
+        url: "http://"+endereco+"/troca_pontos.php",
         data: { 'opcao': 'verificaTroca', 'id_usuario': id_usuario, 'id_premio': id_premio, 'pontos': pontos},
         success: function (data) {
 
@@ -56,7 +57,7 @@ function retiraPontuacao(pontos) {
     $.ajax({
         method: "POST",
         dataType: 'json',
-        url: "http://localhost/atividade.php",
+        url: "http://"+endereco+"/atividade.php",
         data: { 'opcao': 'retiraPontuacao', 'id_usuario': id_usuario, 'pontos': pontos },
         success: function (data) {
             localStorage.setItem('pontos', data['pontos']);

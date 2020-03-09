@@ -1,3 +1,4 @@
+var endereco = window.location['hostname'];
 var cookieLocal;
 if ((window.localStorage.getItem('usuario'))!=null){
     $(".nome_usuario").text(window.localStorage.getItem('usuario'));
@@ -15,7 +16,7 @@ document.querySelector("#btn_cancelar_termos").addEventListener("click", functio
 function login(){
     $.ajax({
         method: 'POST',
-        url: 'http://localhost/index3.php',
+        url: 'http://'+endereco+'/index3.php',
         data : localStorage.getItem('userInfo'),
         dataType: 'json',
         success:  function(response){
