@@ -13,7 +13,7 @@ body{
     position:relative;
 }
 
-@media screen and (min-width:200px) and (max-width:900px) {
+/* @media screen and (min-width:200px) and (max-width:900px) { */
     body {
         background-color: white;
         font-family: 'Roboto', sans-serif;
@@ -68,5 +68,5 @@ body{
 
 
 
-}
+/* } */
 

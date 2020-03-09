@@ -1,4 +1,4 @@
-@media screen and (min-width:200px) and (max-width:900px) {
+/* @media screen and (min-width:200px) and (max-width:900px) { */
 
     #atividade_1, #atividade_2, #div_warning, #div_ganha_pontos{
         display: none;
@@ -123,5 +123,5 @@
     }
 
 
-}
+/* } */
 

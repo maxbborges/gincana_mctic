@@ -1,4 +1,4 @@
-@media screen and (min-width:200px) and (max-width:900px) {
+/* @media screen and (min-width:200px) and (max-width:900px) { */
 
     #div_ganhou_premio, #div_warning{
         display: none;
@@ -64,5 +64,5 @@
     }
 
 
-}
+/* } */
 

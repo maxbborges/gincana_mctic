@@ -1,7 +1,7 @@
 DROP TABLE IF EXISTS `usuario`;
 CREATE TABLE IF NOT EXISTS `usuario` (
   `id` smallint(6) NOT NULL AUTO_INCREMENT,
-  `codigo` smallint(6) NULL,
+  `codigo` varchar(10) NULL,
   `nome` varchar(50) DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
   `nascimento` datetime DEFAULT NULL,

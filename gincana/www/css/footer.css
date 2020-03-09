@@ -1,4 +1,4 @@
-@media screen and (min-width:200px) and (max-width:900px) {
+/* @media screen and (min-width:200px) and (max-width:900px) { */
 
     #footer{
         position: absolute;
@@ -28,5 +28,5 @@
         /* background-color: currentColor; */
         padding-bottom: 2%;
     }
-}
+/* } */
 

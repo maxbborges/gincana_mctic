@@ -6,6 +6,7 @@ body{
     height: 100%;
     min-height: 600px;
     min-width: 350px;
+    background-color:#134663;
 }
 
 #geral{
@@ -13,7 +14,7 @@ body{
     position:relative;
 }
 
-@media screen and (min-width:200px) and (max-width:900px) {
+/* @media screen and (min-width:200px) and (max-width:900px) { */
     body {
         background-color:#134663;
         font-family: 'Roboto', sans-serif;
@@ -96,5 +97,5 @@ body{
 
 
 
-}
+/* } */
 
