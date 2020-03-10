@@ -6,16 +6,27 @@ $(document).ready(function () {
     tipo_qr = urlParams.get('tipo');
     codigo_qr = urlParams.get('qr');
     atividades = JSON.parse(window.localStorage.getItem('atividades'));
-    id_usuario = window.localStorage.getItem('id');  
+    id_usuario = window.localStorage.getItem('id');
 
-    $("#btn_warning").click( function () {
+    $("#btn_warning").click(function () {
         window.location.href = "../paginas/home.html";
     });
 
-    if (tipo_qr == 1 || tipo_qr == 2) {        
-              
-        id_atividade = atividades[codigo_qr]['id_atividade'];
-        pontos = atividades[codigo_qr]['pontos'];        
+    if (tipo_qr == 1 || tipo_qr == 2) {
+
+        if (atividades[codigo_qr] != undefined) {
+            if (atividades[codigo_qr]['id_atividade'] != undefined && atividades[codigo_qr]['pontos'] != undefined) {
+                id_atividade = atividades[codigo_qr]['id_atividade'];
+                pontos = atividades[codigo_qr]['pontos'];
+            } else {
+                alert('Código não encontrado');
+                window.location.href = "../paginas/home.html";
+            }
+        } else {
+            alert('Código não encontrado');
+            window.location.href = "../paginas/home.html";
+        }
+
 
     }
 
@@ -24,7 +35,7 @@ $(document).ready(function () {
         $.ajax({
             method: "POST",
             dataType: 'json',
-            url: "http://"+endereco+"/atividade.php",
+            url: "http://" + endereco + "/atividade.php",
             data: { 'opcao': 'verificaFezAtividade', 'id_usuario': id_usuario, 'id_atividade': id_atividade },
             success: function (data) {
 
@@ -51,7 +62,7 @@ $(document).ready(function () {
         $.ajax({
             method: "POST",
             dataType: 'json',
-            url: "http://"+endereco+"/atividade.php",
+            url: "http://" + endereco + "/atividade.php",
             data: { 'opcao': 'verificaFezAtividade', 'id_usuario': id_usuario, 'id_atividade': id_atividade },
             success: function (data) {
                 if (!data['result']) {
@@ -66,39 +77,49 @@ $(document).ready(function () {
         });
 
     } else if (tipo_qr == 4) { //QR FINALIZA ATIVIDADE
-        
+
         var qr_finaliza = JSON.parse(window.localStorage.getItem('qr_finaliza'));
-        var atividade_finaliza = qr_finaliza[codigo_qr].finaliza_atividade;
-        var id_atividade = atividades[atividade_finaliza]['id_atividade'];
-        pontos = atividades[atividade_finaliza]['pontos'];
+
+        if (qr_finaliza[codigo_qr] != undefined) {
+            
+            var atividade_finaliza = qr_finaliza[codigo_qr].finaliza_atividade;
+            var id_atividade = atividades[atividade_finaliza]['id_atividade'];
+            pontos = atividades[atividade_finaliza]['pontos'];
 
 
-        $.ajax({
-            method: "POST",
-            dataType: 'json',
-            url: "http://"+endereco+"/atividade.php",
-            data: { 'opcao': 'verificaFezAtividade', 'id_usuario': id_usuario, 'id_atividade': id_atividade },
-            success: function (data) {
-                
-                if (!data['result']) {
-                    $("#atividade_1").hide();
-                    $("#atividade_2").hide();
-                    $("#div_warning").hide();
-                    $("#div_ganha_pontos").show();
-                    $("#resposta_certa").hide();
+            $.ajax({
+                method: "POST",
+                dataType: 'json',
+                url: "http://" + endereco + "/atividade.php",
+                data: { 'opcao': 'verificaFezAtividade', 'id_usuario': id_usuario, 'id_atividade': id_atividade },
+                success: function (data) {
 
-                    $("#div_pontos_ganhos .span_pontuacao").html('<strong>' + pontos + '</strong>');
+                    if (!data['result']) {
+                        $("#atividade_1").hide();
+                        $("#atividade_2").hide();
+                        $("#div_warning").hide();
+                        $("#div_ganha_pontos").show();
+                        $("#resposta_certa").hide();
 
-                    enviaPontuacao(pontos, id_atividade);
-                } else {
-                    $("#atividade_1").hide();
-                    $("#atividade_2").hide();
-                    $("#div_warning").show();
-                    $("#div_ganha_pontos").hide();
+                        $("#div_pontos_ganhos .span_pontuacao").html('<strong>' + pontos + '</strong>');
+
+                        enviaPontuacao(pontos, id_atividade);
+                    } else {
+                        $("#atividade_1").hide();
+                        $("#atividade_2").hide();
+                        $("#div_warning").show();
+                        $("#div_ganha_pontos").hide();
+                    }
                 }
-            }
-        });
-        
+            });
+        } else {
+            alert('Código não encontrado');
+            window.location.href = "../paginas/home.html";
+        }
+
+    } else {
+        alert('Código não encontrado');
+        window.location.href = "../paginas/home.html";
     }
 
 
@@ -115,7 +136,7 @@ $(document).ready(function () {
 
         $("#atividade_2").hide();
         $("#div_ganha_pontos").show();
-        
+
         $("#div_pontos_ganhos .span_pontuacao").html('<strong>' + pontos + '</strong>');
 
         enviaPontuacao(pontos, id_atividade);
@@ -128,7 +149,7 @@ function enviaPontuacao(pontos, id_atividade) {
     $.ajax({
         method: "POST",
         dataType: 'json',
-        url: "http://"+endereco+"/atividade.php",
+        url: "http://" + endereco + "/atividade.php",
         data: { 'opcao': 'enviarPontuacao', 'id_usuario': id_usuario, 'pontos': pontos, 'id_atividade': id_atividade },
         success: function (data) {
             localStorage.setItem('pontos', data['pontos']);

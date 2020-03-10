@@ -55,12 +55,12 @@
         font-size: 18px;
         line-height: 21px;
         color: #134663;
-        margin-top: 250px;
+        margin-top: 50%;
     }
 
     #btn_warning{
-        margin-top: 100px;
-        width: 100px;;
+        margin-top: 15px;
+        width: 100px;
     }
 
 

@@ -86,7 +86,7 @@
     }
 
     #div_mensagem{
-        margin-top: 100px;
+        margin-top: 30px;
     }
 
     #div_pontos_ganhos{
@@ -115,11 +115,12 @@
         font-size: 18px;
         line-height: 21px;
         color: #134663;
-        margin-top: 250px;
+        margin-top: 50%;
     }
 
     #btn_warning{
         width: 100px;
+        margin-top: 15px;
     }
 
 

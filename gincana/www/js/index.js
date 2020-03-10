@@ -29,6 +29,6 @@ $(document).ready(function () {
     app.initialize();
 
     $("#tipoRedeSocial").change(function () {
-        console.log('ee');
+        // console.log('ee');
     });
 });
