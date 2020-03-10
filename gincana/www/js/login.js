@@ -8,5 +8,9 @@ if (v!=null){
         localStorage.setItem('usuario', $("#nome").val());
     });
 } else {
-    alert ('Erro, não foi buscar sua sessão!');
+    
+    if (window.location.pathname!='/paginas/index.html'&&
+        window.location.pathname!='/paginas/termos_codicoes.html'){
+        window.location='/paginas/index.html';
+    }
 }

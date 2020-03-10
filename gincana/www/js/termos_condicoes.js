@@ -1,6 +1,11 @@
-var endereco = window.location['hostname'];
-var porta1 = ':443'
-var porta2 = ':444'
+var protocolo = window.location.protocol+"//";
+var endereco = window.location.hostname;
+if (endereco=='localhost'){
+    porta2 = '/';
+} else {
+    var porta1 = ':443/'
+    var porta2 = ':444/'
+}
 var cookieLocal;
 if ((window.localStorage.getItem('usuario'))!=null){
     $(".nome_usuario").text(window.localStorage.getItem('usuario'));
@@ -18,7 +23,7 @@ document.querySelector("#btn_cancelar_termos").addEventListener("click", functio
 function login(){
     $.ajax({
         method: 'POST',
-        url: 'https://'+endereco+porta2+'/index3.php',
+        url: protocolo+endereco+porta2+'/index3.php',
         data : localStorage.getItem('userInfo'),
         dataType: 'json',
         success:  function(response){

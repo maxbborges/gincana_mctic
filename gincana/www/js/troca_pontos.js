@@ -1,6 +1,11 @@
-var endereco = window.location['hostname'];
-var porta1 = ':443'
-var porta2 = ':444'
+var protocolo = window.location.protocol+"//";
+var endereco = window.location.hostname;
+if (endereco=='localhost'){
+    porta2 = '/';
+} else {
+    var porta1 = ':443/'
+    var porta2 = ':444/'
+}
 $(document).ready(function () {
 
     const premios = JSON.parse(window.localStorage.getItem('premios'));
@@ -19,7 +24,7 @@ $(document).ready(function () {
     $.ajax({
         method: "POST",
         dataType: 'json',
-        url: "https://"+endereco+porta2+"/troca_pontos.php",
+        url: protocolo+endereco+porta2+"/troca_pontos.php",
         data: { 'opcao': 'verificaTroca', 'id_usuario': id_usuario, 'id_premio': id_premio, 'pontos': pontos},
         success: function (data) {
 
@@ -59,7 +64,7 @@ function retiraPontuacao(pontos) {
     $.ajax({
         method: "POST",
         dataType: 'json',
-        url: "https://"+endereco+porta2+"/atividade.php",
+        url: protocolo+endereco+porta2+"/atividade.php",
         data: { 'opcao': 'retiraPontuacao', 'id_usuario': id_usuario, 'pontos': pontos },
         success: function (data) {
             localStorage.setItem('pontos', data['pontos']);

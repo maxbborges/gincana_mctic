@@ -1,6 +1,11 @@
-var endereco = window.location['hostname'];
-var porta1 = ':443'
-var porta2 = ':444'
+var protocolo = window.location.protocol+"//";
+var endereco = window.location.hostname;
+if (endereco=='localhost'){
+    porta2 = '/';
+} else {
+    var porta1 = ':443/'
+    var porta2 = ':444/'
+}
 $(document).ready(function () {
 
     const queryString = window.location.search;
@@ -37,7 +42,7 @@ $(document).ready(function () {
         $.ajax({
             method: "POST",
             dataType: 'json',
-            url: "https://" + endereco + porta2+ "/atividade.php",
+            url: protocolo + endereco + porta2+ "/atividade.php",
             data: { 'opcao': 'verificaFezAtividade', 'id_usuario': id_usuario, 'id_atividade': id_atividade },
             success: function (data) {
 
@@ -64,7 +69,7 @@ $(document).ready(function () {
         $.ajax({
             method: "POST",
             dataType: 'json',
-            url: "https://" + endereco + porta2 + "/atividade.php",
+            url: protocolo + endereco + porta2 + "/atividade.php",
             data: { 'opcao': 'verificaFezAtividade', 'id_usuario': id_usuario, 'id_atividade': id_atividade },
             success: function (data) {
                 if (!data['result']) {
@@ -92,7 +97,7 @@ $(document).ready(function () {
             $.ajax({
                 method: "POST",
                 dataType: 'json',
-                url: "https://" + endereco + porta2 + "/atividade.php",
+                url: protocolo + endereco + porta2 + "/atividade.php",
                 data: { 'opcao': 'verificaFezAtividade', 'id_usuario': id_usuario, 'id_atividade': id_atividade },
                 success: function (data) {
 
@@ -151,7 +156,7 @@ function enviaPontuacao(pontos, id_atividade) {
     $.ajax({
         method: "POST",
         dataType: 'json',
-        url: "https://" + endereco + porta2 + "/atividade.php",
+        url: protocolo + endereco + porta2 + "/atividade.php",
         data: { 'opcao': 'enviarPontuacao', 'id_usuario': id_usuario, 'pontos': pontos, 'id_atividade': id_atividade },
         success: function (data) {
             localStorage.setItem('pontos', data['pontos']);

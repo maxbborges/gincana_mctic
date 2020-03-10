@@ -6,7 +6,7 @@ let scanner = new Instascan.Scanner({
 
 scanner.addListener('scan', function(content) {
     verificaQr(content);    
-    window.open(content, "_blank");
+    // window.open(content, "_blank");
 });
 
 Instascan.Camera.getCameras().then(cameras => 
