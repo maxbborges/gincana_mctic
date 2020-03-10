@@ -1,4 +1,6 @@
 var endereco = window.location['hostname'];
+var porta1 = ':443'
+var porta2 = ':444'
 var cookieLocal;
 if ((window.localStorage.getItem('userInfo'))!=null){
     cookieLocal = (window.localStorage.getItem('userInfo')).match('(^|&) ?cookie=([^;]*)(;|$)');
@@ -28,7 +30,7 @@ if ((window.localStorage.getItem('usuario')!=null&&window.localStorage.getItem('
 function verificaSessao(){
     $.ajax({
         method: "GET",
-        url: "http://"+endereco+"/",
+        url: "https://"+endereco+porta2+"/",
         dataType: 'jsonp',
         success: function(data, textStatus, jqXHR){
             if(data['status']==0){
