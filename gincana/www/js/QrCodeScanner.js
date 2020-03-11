@@ -46,7 +46,7 @@ function initAvaliableCameras(selectObject, callBack) {
             // var o = $("<option value='" + i + "'></option>");
             // o.text("Camera#" + i);
             // o.appendTo(selectObject);
-            max = i;
+            // max = i;
         }
 
         //choose the rear camera (last)
