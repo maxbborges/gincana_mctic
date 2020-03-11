@@ -24,7 +24,12 @@
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
         crossorigin="anonymous"></script>
     <script src="../js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../js/instascan.min.js" ></script>
+    <!-- <script type="text/javascript" src="../js/instascan.min.js" ></script> -->
+
+    <script type="text/javascript" src="../js/adapter.min.js"></script>
+    <script type="text/javascript" src="../js/instascan.js"></script>
+    <script type="text/javascript" src="../js/QrCodeScanner.js"></script>
+
     <script src="../js/verifica_sessao.js"></script>
     <script type="text/javascript" src="../js/footer.js"></script>
     <script type="text/javascript" src="../js/header.js"></script>
@@ -42,26 +47,18 @@
     </div>
 
     <div id="div_qr_screen">
-        <video id="preview"></video>
+        <!-- <select id="webcameraChanger" onchange="cameraChange($(this).val());" class="frm-ctrl mar-btm-2"></select> -->
+        <video id="webcameraPreview"></video>
     </div>
     <div id="div_image_load">
         <img src="../img/load_2.gif" id="img_load_qr">
     </div>    
     <div class="clearfix"></div>
     
-    <div class="btn_voltar_qr">
+    <div id="div_btn_voltar_qr">
         <button type="button" class="btn btn_cancelar" id="btn_voltar_qr">CANCELAR</button>
     </div>   
-    
-     
-    <!-- <div class='blink'> -->
-        
-        <!-- <a id="prepare">QR Scanner</a> -->
-        <!-- <button type="button" id="prepare" class="btn_troca_pontos">QR Scanner</button> -->
-    <!-- <a id="show">QR Show</a>
-    <a id="scan">QR Scan</a> -->
-    
-    <!-- </div> -->
+
     <div id="footer"></div>
     </div>
     <script type="text/javascript" src="../cordova.js"></script>

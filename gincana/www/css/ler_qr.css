@@ -14,6 +14,10 @@
         text-align: center;
     }
 
+    #webcameraPreview{
+        width: 100%;
+    }
+
     #img_load_qr{
         height: 100px;
     }
@@ -30,6 +34,12 @@
         vertical-align: middle;
     }
 
+    #div_btn_voltar_qr{
+        margin-left: auto;
+        margin-right: auto;
+        width: 294px;
+    }
+
     #load_img{
         width: 300px;
         height: 200px;        
@@ -37,8 +47,10 @@
 
     #div_qr_screen{
         display: none;
-        width: 300px;
-        height: 200px; 
+        height: 200px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 294px;
     }
 
     video#preview{
