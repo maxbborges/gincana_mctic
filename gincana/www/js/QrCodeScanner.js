@@ -54,7 +54,7 @@ function initAvaliableCameras(selectObject, callBack) {
         }
 
         //choose the rear camera (last)
-        selectObject.val(max);
+        selectObject.val(1);
 
         callBack();
     });
