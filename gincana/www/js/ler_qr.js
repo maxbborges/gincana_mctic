@@ -1,59 +1,59 @@
 var atividades = JSON.parse(window.localStorage.getItem('atividades'));
 
-// let scanner = new Instascan.Scanner({
-//         video: document.getElementById('preview')
-// });
+let scanner = new Instascan.Scanner({
+        video: document.getElementById('preview')
+});
 
-// scanner.addListener('scan', function(content) {
-//     verificaQr(content);    
-//     // window.open(content, "_blank");
-// });
+scanner.addListener('scan', function(content) {
+    verificaQr(content);    
+    // window.open(content, "_blank");
+});
 
-// Instascan.Camera.getCameras().then(cameras => 
-// {
-//     if(cameras.length > 0){
-//         $("#img_load_qr").hide();
-//         $("#div_qr_screen").show();
-//         if (cameras.length == 1){
-//             scanner.start(cameras[0]);
-//         } else {
-//             scanner.start(cameras[(cameras.length)-1]);
-//         }       
-//     } else {
-//         alert("Não existe câmera no dispositivo!");
-//     }
-// });
-
-
-//HTML video component for web camera
-var videoComponent = $("#webcameraPreview");
-//HTML select component for cameras change
-var webcameraChanger = $("#webcameraChanger");
-var options = {};
-//init options for scanner
-options = initVideoObjectOptions("webcameraPreview");
-var cameraId = 0;
-
-initScanner(options);
-
-initAvaliableCameras(
-    webcameraChanger,
-    function () {
-        
-        cameraId = parseInt(getSelectedCamera(webcameraChanger));
+Instascan.Camera.getCameras().then(cameras => 
+{
+    if(cameras.length > 0){
         $("#img_load_qr").hide();
         $("#div_qr_screen").show();
+        if (cameras.length == 1){
+            scanner.start(cameras[0]);
+        } else {
+            scanner.start(cameras[(cameras.length)-1]);
+        }       
+    } else {
+        alert("Não existe câmera no dispositivo!");
     }
-);
-
-initCamera(cameraId);
-
-
-scanStart(function (data){
-    
-    verificaQr(data);
-    // alert(data);
 });
+
+
+// //HTML video component for web camera
+// var videoComponent = $("#webcameraPreview");
+// //HTML select component for cameras change
+// var webcameraChanger = $("#webcameraChanger");
+// var options = {};
+// //init options for scanner
+// options = initVideoObjectOptions("webcameraPreview");
+// var cameraId = 0;
+
+// initScanner(options);
+
+// initAvaliableCameras(
+//     webcameraChanger,
+//     function () {
+        
+//         cameraId = parseInt(getSelectedCamera(webcameraChanger));
+//         $("#img_load_qr").hide();
+//         $("#div_qr_screen").show();
+//     }
+// );
+
+// initCamera(cameraId);
+
+
+// scanStart(function (data){
+    
+//     verificaQr(data);
+//     // alert(data);
+// });
 
 
 

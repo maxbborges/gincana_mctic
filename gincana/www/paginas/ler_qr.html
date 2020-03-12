@@ -27,7 +27,7 @@
     <!-- <script type="text/javascript" src="../js/instascan.min.js" ></script> -->
 
     <script type="text/javascript" src="../js/adapter.min.js"></script>
-    <script type="text/javascript" src="../js/instascan.js"></script>
+    <script type="text/javascript" src="../js/instascan.min.js"></script>
     <script type="text/javascript" src="../js/QrCodeScanner.js"></script>
 
     <script src="../js/verifica_sessao.js"></script>
@@ -47,8 +47,8 @@
     </div>
 
     <div id="div_qr_screen">
-        <select id="webcameraChanger" onchange="cameraChange($(this).val());" class="frm-ctrl mar-btm-2"></select>
-        <video id="webcameraPreview"></video>
+        <!-- <select id="webcameraChanger" onchange="cameraChange($(this).val());" class="frm-ctrl mar-btm-2"></select> -->
+        <video id="preview"></video>
     </div>
     <div id="div_image_load">
         <img src="../img/load_2.gif" id="img_load_qr">
