@@ -42,9 +42,9 @@ function initAvaliableCameras(selectObject, callBack) {
     var max = 0;
     Instascan.Camera.getCameras().then(function (cameras) {
 
-    //    alert(cameras[0].name);
-    //    alert(cameras[1].name);
-    //    alert(cameras[2].name);
+       alert(cameras[0].name);
+       alert(cameras[1].name);
+       alert(cameras[2].name);
 
         for (var i = 0; i < cameras.length; i++) {
             // var o = $("<option value='" + i + "'></option>");
