@@ -47,14 +47,14 @@ function initAvaliableCameras(selectObject, callBack) {
     //    alert(cameras[2].name);
 
         for (var i = 0; i < cameras.length; i++) {
-            // var o = $("<option value='" + i + "'></option>");
-            // o.text("Camera#" + i);
-            // o.appendTo(selectObject);
+            var o = $("<option value='" + i + "'></option>");
+            o.text("Camera#" + i);
+            o.appendTo(selectObject);
             max = i;
         }
 
         //choose the rear camera (last)
-        selectObject.val(0);
+        selectObject.val(max);
 
         callBack();
     });
