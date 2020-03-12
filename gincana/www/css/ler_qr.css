@@ -50,10 +50,10 @@
 
     #div_qr_screen{
         display: none;
-        height: 200px;
-        margin-left: auto;
+        height: 358px;
+        /* margin-left: auto;
         margin-right: auto;
-        width: 125px;
+        width: 125px; */
     }
 
     video#preview{
