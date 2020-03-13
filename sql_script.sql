@@ -34,10 +34,10 @@ INSERT INTO alternativas_quiz (id_quiz,descricao,resposta_certa) VALUES (8, '13 
 INSERT INTO alternativas_quiz (id_quiz,descricao,resposta_certa) VALUES (8, '14 anos', 'N');
 INSERT INTO alternativas_quiz (id_quiz,descricao,resposta_certa) VALUES (8, '15 anos', 'N');
 
-INSERT INTO qr_finaliza_atividade (codigo, id_tipo_qr, finaliza_atividade) VALUES ('MCTIC0014', 4, 'MCTIC0006');
-INSERT INTO qr_finaliza_atividade (codigo, id_tipo_qr, finaliza_atividade) VALUES ('MCTIC0015', 4, 'MCTIC0007');
-INSERT INTO qr_finaliza_atividade (codigo, id_tipo_qr, finaliza_atividade) VALUES ('MCTIC0016', 4, 'MCTIC0008');
-INSERT INTO qr_finaliza_atividade (codigo, id_tipo_qr, finaliza_atividade) VALUES ('MCTIC0017', 4, 'MCTIC0009');
+INSERT INTO qr_finaliza_atividade (codigo, id_tipo_qr, pontos) VALUES ('MCTIC0014', 4, 15);
+INSERT INTO qr_finaliza_atividade (codigo, id_tipo_qr, pontos) VALUES ('MCTIC0015', 4, 25);
+INSERT INTO qr_finaliza_atividade (codigo, id_tipo_qr, pontos) VALUES ('MCTIC0016', 4, 10);
+INSERT INTO qr_finaliza_atividade (codigo, id_tipo_qr, pontos) VALUES ('MCTIC0017', 4, 30);
 
 
 

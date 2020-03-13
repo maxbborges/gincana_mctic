@@ -24,40 +24,6 @@ Instascan.Camera.getCameras().then(cameras =>
     }
 });
 
-
-// //HTML video component for web camera
-// var videoComponent = $("#webcameraPreview");
-// //HTML select component for cameras change
-// var webcameraChanger = $("#webcameraChanger");
-// var options = {};
-// //init options for scanner
-// options = initVideoObjectOptions("webcameraPreview");
-// var cameraId = 0;
-
-// initScanner(options);
-
-// initAvaliableCameras(
-//     webcameraChanger,
-//     function () {
-        
-//         cameraId = parseInt(getSelectedCamera(webcameraChanger));
-//         $("#img_load_qr").hide();
-//         $("#div_qr_screen").show();
-//     }
-// );
-
-// initCamera(cameraId);
-
-
-// scanStart(function (data){
-    
-//     verificaQr(data);
-//     // alert(data);
-// });
-
-
-
-
 $("#btn_voltar_qr").click(function () {
     window.location.href = '../paginas/home.html';
 });

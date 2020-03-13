@@ -39,29 +39,29 @@ $(document).ready(function () {
 
     if (tipo_qr == 1) { //ATIVIDADE FÍSICA
 
-        $.ajax({
-            method: "POST",
-            dataType: 'json',
-            url: protocolo + endereco + porta2+ "/atividade.php",
-            data: { 'opcao': 'verificaFezAtividade', 'id_usuario': id_usuario, 'id_atividade': id_atividade },
-            success: function (data) {
+        // $.ajax({
+        //     method: "POST",
+        //     dataType: 'json',
+        //     url: protocolo + endereco + porta2+ "/atividade.php",
+        //     data: { 'opcao': 'verificaFezAtividade', 'id_usuario': id_usuario, 'id_atividade': id_atividade },
+        //     success: function (data) {
 
-                if (!data['result']) {
+        //         if (!data['result']) {
                     $("#atividade_1").show();
                     $("#atividade_2").hide();
                     $("#div_warning").hide();
                     $("#div_ganha_pontos").hide();
 
                     $("#div_desc_atividade_fisico p").html(atividades[codigo_qr]['desc_atividade'] + ". <br>(este desafio deve ser validado pelo monitor para obter pontuação)");
-                } else {
+                // } else {
 
-                    $("#atividade_1").hide();
-                    $("#atividade_2").hide();
-                    $("#div_warning").show();
-                    $("#div_ganha_pontos").hide();
-                }
-            }
-        });
+                //     $("#atividade_1").hide();
+                //     $("#atividade_2").hide();
+                //     $("#div_warning").show();
+                //     $("#div_ganha_pontos").hide();
+                // }
+        //     }
+        // });
 
 
     } else if (tipo_qr == 2) { //ATIVIDADE QUIZ
@@ -89,9 +89,13 @@ $(document).ready(function () {
 
         if (qr_finaliza[codigo_qr] != undefined) {
             
-            var atividade_finaliza = qr_finaliza[codigo_qr].finaliza_atividade;
-            var id_atividade = atividades[atividade_finaliza]['id_atividade'];
-            pontos = atividades[atividade_finaliza]['pontos'];
+            // var atividade_finaliza = qr_finaliza[codigo_qr].finaliza_atividade;
+            // var id_atividade = atividades[atividade_finaliza]['id_atividade'];
+            // pontos = atividades[atividade_finaliza]['pontos'];
+
+            // var atividade_finaliza = qr_finaliza[codigo_qr].finaliza_atividade;
+            var id_atividade = qr_finaliza[codigo_qr].id;
+            pontos = qr_finaliza[codigo_qr].pontos;
 
 
             $.ajax({

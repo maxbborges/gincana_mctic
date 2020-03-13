@@ -4,8 +4,7 @@
 
     $return = [];
 
-    if ($_POST['nome'] != null && $_POST['email'] != null
-        ){
+    if ($_POST['nome'] != null && $_POST['email'] != null){
         
         require_once './connection.php';
 
@@ -114,7 +113,8 @@
     if($resultado){
         while($rg = mysqli_fetch_array($resultado, MYSQLI_ASSOC)){
             $return['qr_finaliza'][$rg['codigo']]['id_tipo_qr'] = $rg['id_tipo_qr'];
-            $return['qr_finaliza'][$rg['codigo']]['finaliza_atividade'] = $rg['finaliza_atividade'];
+            $return['qr_finaliza'][$rg['codigo']]['pontos'] = $rg['pontos'];
+            $return['qr_finaliza'][$rg['codigo']]['id'] = $rg['id'];
         }        
     }
 

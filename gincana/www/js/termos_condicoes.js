@@ -27,7 +27,7 @@ function login(){
         data : localStorage.getItem('userInfo'),
         dataType: 'json',
         success:  function(response){
-            console.log(response);
+            
             if(response['login']['status'] == 0){
                 alert("Preencha todos os campos!");
             } else {

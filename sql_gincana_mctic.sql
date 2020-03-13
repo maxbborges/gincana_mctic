@@ -82,7 +82,7 @@ CREATE TABLE IF NOT EXISTS `qr_finaliza_atividade` (
   `id` smallint(6) NOT NULL AUTO_INCREMENT,
   `codigo` varchar(20) DEFAULT NULL,
   `id_tipo_qr` smallint(1) DEFAULT NULL,
-  `finaliza_atividade` varchar(20) DEFAULT NULL,
+  `pontos` smallint(6) DEFAULT NULL,
   PRIMARY KEY (`id`),
   FOREIGN KEY `FK_id_tipo_qr_tb_qr_finaliza_atividade` (`id_tipo_qr`) REFERENCES tipo_qr (id)
 ) ;
