@@ -2,3 +2,4 @@ gincana/platforms
 gincana/plugins
 gincana/node_modules
 gincana/package-lock.json
+/gincana/nbproject/private/
