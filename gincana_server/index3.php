@@ -4,17 +4,21 @@
 
     $return = [];
 
-    if ($_POST['nome']!=null&&$_POST['email']!=null&&$_POST['dataDeNascimento']!=null){
+    if ($_POST['nome'] != null && $_POST['email'] != null
+        ){
+        
         require_once './connection.php';
 
         $nome = $_POST['nome'];
-        $email = $_POST['email'];
-        $data_nascimento = $_POST['dataDeNascimento'];
-        $rede_social = $_POST['redeSocial'];
-        $tp_rede_social = $_POST['tipoRedeSocial'];
+        $email = $_POST['email'];        
+        $instagram = $_POST['inputInstagram'];
+        $twitter = $_POST['inputTwitter'];
+        $facebook = $_POST['inputFacebook'];
+        $whatsapp = $_POST['inputWhatsapp'];
         $pontos = 0;
         $sessao = $_POST["cookie"];
         $codigo = '';
+        $data_nascimento = $_POST['inputAno'] . '-' . $_POST['inputMes'] . '-' . $_POST['inputDia'];        
 
         //GERANDO O CÓDIGO DO USUÁRIO
         $characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVXYWZ';
@@ -23,18 +27,19 @@
             $codigo .= $characters[rand(0, $charactersLength - 1)];
         }  
 
-        $sql = "INSERT INTO usuario (nome, codigo, email, nascimento, rede_social, tipo_rede_social, pontos, sessao) VALUES (?,?,?,?,?,?,?,?)";
+        $sql = "INSERT INTO usuario (nome, codigo, email, nascimento, instagram, twitter, facebook, whatsapp, pontos, sessao) VALUES (?,?,?,?,?,?,?,?,?,?)";
         $stmt = $link->prepare($sql);
         if($stmt){
-            if($stmt->bind_param('ssssssis', $nome, $codigo, $email, $data_nascimento, $rede_social, $tp_rede_social, $pontos, $sessao)){
+            if($stmt->bind_param('ssssssssis', $nome, $codigo, $email, $data_nascimento, $instagram, $twitter, $facebook, $whatsapp, $pontos, $sessao)){
                 $stmt->execute();                
 
-                $user = mysqli_query($link,'SELECT id, nome, pontos FROM usuario where sessao = "'.$sessao.'";')->fetch_assoc();
+                $user = mysqli_query($link,'SELECT id, nome, pontos, codigo FROM usuario where sessao = "'.$sessao.'";')->fetch_assoc();
                 $return['login'] = [
                     'id' => $user['id'], 
                     'status' => 1,
                     'usuario' => $user['nome'],
-                    'pontos' => $user['pontos']
+                    'pontos' => $user['pontos'],
+                    'codigo' => $user['codigo']
                 ];
 
                 $stmt->close();
@@ -47,19 +52,6 @@
     } else {
         $return['login'] = ['status' => 0, 'outros' => $_POST['cookie']];
     }
-
-    
-    // if (mysqli_query($link,'INSERT INTO usuario (nome,codigo,email,nascimento,rede_social,tipo_rede_social,pontos,sessao) values ("'.$nome.'","'.$codigo.'","'.$email.'","'.$data_nascimento.'","'.$rede_social.'","'.$tp_rede_social.'", ' .  $pontos . ' ,"'.$sessao.'");')){
-    //     $consulta1=mysqli_query($link,'SELECT id,nome,pontos FROM usuario where sessao="'.$_POST['cookie'].'";')->fetch_assoc();
-    //     $return['login'] = array('id'=>$consulta1['id'], 'status'=>1, 'usuario'=>$consulta1['nome'],'pontos'=>$consulta1['pontos']);
-    //     // echo json_encode(array('status'=>1, 'usuario'=>$consulta1['nome'],'pontos'=>$consulta1['pontos']));
-    // }
-    // else {
-    //     $return['login'] = array('status'=>0, 'outros'=>$_POST['cookie']);
-    //     // echo json_encode(array('status'=>0, 'outros'=>$_POST['cookie']));
-    //     // echo mysqli_error($link);
-    // }
-    //--------
 
     //TODOS OS QR CODE
     $sql = "SELECT codigo, id_tipo_qr FROM atividade

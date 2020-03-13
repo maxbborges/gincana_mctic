@@ -39,6 +39,7 @@ function login(){
                 localStorage.setItem('usuario',response['login']['usuario']);
                 localStorage.setItem('pontos',response['login']['pontos']);
                 localStorage.setItem('id',response['login']['id']);
+                localStorage.setItem('codigo',response['login']['codigo']);
 
                 window.location = 'home.html';
             }

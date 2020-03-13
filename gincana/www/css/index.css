@@ -6,11 +6,11 @@
     }
      */
 
-    body {
+     body {
         margin: 0;
     }
     .form_input{
-        width: 298px;
+        width: 290px;
         height: 44px;
         background: #FFFFFF;
         outline: 0;
@@ -26,6 +26,7 @@
     .select_rede{
         width: 85px;
         padding-right: 0px;
+        /* height: 48px; */
     }
 
     .title_form{
@@ -41,6 +42,20 @@
         margin-right: auto;
         width: 290px;
         margin-bottom: 10px;
+    }
+
+    .input_instagram, .input_facebook{
+        width: 145px;
+        margin-right: 5px;
+    }
+
+    .input_twitter, .input_whatsapp{
+        width: 140px;
+    }
+
+    .input_dia, .input_mes, .input_ano{
+        width: 93px;
+        margin-right: 5px;
     }
 
     #btn-login{

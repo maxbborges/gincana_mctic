@@ -5,8 +5,12 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `nome` varchar(50) DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
   `nascimento` datetime DEFAULT NULL,
-  `rede_social` varchar(50) DEFAULT NULL,
-  `tipo_rede_social` varchar(50) DEFAULT NULL,
+
+  `instagram` varchar(50) DEFAULT NULL,
+  `twitter` varchar(50) DEFAULT NULL,
+  `facebook` varchar(50) DEFAULT NULL,
+  `whatsapp` varchar(50) DEFAULT NULL,
+
   `pontos` smallint(6) DEFAULT NULL,
   `sessao` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
