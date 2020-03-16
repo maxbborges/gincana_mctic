@@ -45,7 +45,7 @@
             <div class="clearfix"></div>
 
             <div id="title_ler_qr">
-                <span class="span_title_qr">Escaneie o código</span>
+                <span class="span_title_qr" id="span_title_qr"></span>
             </div>
 
             <div id="div_qr_screen">
@@ -55,11 +55,22 @@
             <div id="div_image_load">
                 <img src="../img/load_2.gif" id="img_load_qr">
             </div>
+            <div id="div_qr_manual">
+                <input type="text" id="text_qr_manual" class="form-control form_input"/>
+                <div id="div_btn_qr_manual">
+                    <div id="div_btn_voltar_qr_manual">
+                        <button type="button" class="btn btn_cancelar btn_voltar_ler_qr">CANCELAR</button>
+                    </div>
+                    <div id="div_btn_enviar_qr_manual">
+                        <button type="button" class="btn btn_inicio" id="btn_enviar_qr">ENVIAR</button>
+                    </div>                                    
+                </div>
+            </div>
             <div class="clearfix"></div>
 
             <div id="div_btn_voltar_qr">
-                <button type="button" class="btn btn_cancelar" id="btn_voltar_qr">CANCELAR</button>
-            </div>
+                <button type="button" class="btn btn_cancelar btn_voltar_ler_qr">CANCELAR</button>
+            </div>            
         </div>
 
         <div id="footer"></div>

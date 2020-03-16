@@ -4,6 +4,16 @@
         background-color: transparent;
     }
 
+    .form_input{
+        width: 290px;
+        height: 44px;
+        background: #FFFFFF;
+        outline: 0;
+        border-width: 1px 1px 2px;
+        border-color: #80808042 #80808042 #FFCB06;
+        margin-bottom: 7px;
+    }
+
     #title_ler_qr{
         text-align: center;
         margin-top: 18px;
@@ -54,6 +64,35 @@
         /* margin-left: auto;
         margin-right: auto;
         width: 125px; */
+    }
+
+    #div_btn_voltar_qr, #div_btn_qr_manual{
+        display: none;
+    }
+
+    #div_btn_qr_manual{
+        margin-top: 25px;
+    }
+
+    #div_btn_enviar_qr_manual{
+        margin-right: 5px;
+        float: right;        
+    }
+
+    #div_btn_enviar_qr_manual button{
+        width: 90px;      
+    }
+
+    #div_btn_voltar_qr_manual{
+        float: left;
+    }
+
+    #div_qr_manual{
+        display: none;
+        margin-top: 40px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 295px;
     }
 
     video#preview{

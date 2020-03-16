@@ -19,6 +19,15 @@
         font-weight: normal;
     }
 
+    #div_span_codigo{
+        margin-top: 34px;
+    }
+
+    .span_codigo{
+        font-size: 24px;
+        color: #FFCB06;
+    }
+
     .span_pontos{
         font-size: 24px;
         color: white;
@@ -30,12 +39,12 @@
 
     #btn_ler_qr{
         width: 294px;
-        margin-top: 44px;
+        margin-top: 20px;
     }
 
     #btn_trocar_pontos{
         width: 294px;
-        margin-top: 33px;
+        margin-top: 20px;
     }
 
     #link_sair{
