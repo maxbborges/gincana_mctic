@@ -26,4 +26,18 @@ $(document).ready(function () {
     for (let i = 1920; i <= 2020; i++) {
         $("#inputAno").append("<option value='" + i + "'>" + i + "</option>");
     }
+
+    $("#inputWhatsapp").mask("(99) 9999-9999?9").focusout(function (event) {
+        console.log('ddd');
+        var target, phone, element;
+        target = (event.currentTarget) ? event.currentTarget : event.srcElement;
+        phone = target.value.replace(/\D/g, '');
+        element = $(target);
+        element.unmask();
+        if (phone.length > 10) {
+            element.mask("(99) 99999-999?9");
+        } else {
+            element.mask("(99) 9999-9999?9");
+        }
+    });
 });
