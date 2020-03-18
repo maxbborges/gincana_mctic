@@ -1,5 +1,7 @@
 var atividades = JSON.parse(window.localStorage.getItem('atividades'));
 
+alert(navigator.platform);
+
 let scanner = new Instascan.Scanner({
         video: document.getElementById('preview')
 });
@@ -30,7 +32,7 @@ Instascan.Camera.getCameras().then(cameras =>
             scanner.start(cameras[(cameras.length)-1]);
         }       
     } else {
-        alert("Não existe câmera no dispositivo!");
+        alert("Não foi possível acessar a câmera do dispositivo");
         $("#img_load_qr").hide();
         $("#div_qr_screen").hide();
         $("#div_qr_manual").show();
@@ -39,14 +41,13 @@ Instascan.Camera.getCameras().then(cameras =>
         $("#span_title_qr").html("Digite o código do QR code");
     }
 }).catch(function(e){
+    alert("Não foi possível acessar a câmera do dispositivo");
     $("#img_load_qr").hide();
     $("#div_qr_screen").hide();
     $("#div_qr_manual").show();
     $("#div_btn_voltar_qr").hide();
     $("#div_btn_qr_manual").show();
-    $("#span_title_qr").html("Digite o código");
-    // console.error(e);
-    // alert(e);
+    $("#span_title_qr").html("Digite o código do QR code");
 });
 
 $(".btn_voltar_ler_qr").click(function () {

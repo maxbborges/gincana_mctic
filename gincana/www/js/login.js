@@ -28,7 +28,6 @@ $(document).ready(function () {
     }
 
     $("#inputWhatsapp").mask("(99) 9999-9999?9").focusout(function (event) {
-        console.log('ddd');
         var target, phone, element;
         target = (event.currentTarget) ? event.currentTarget : event.srcElement;
         phone = target.value.replace(/\D/g, '');
