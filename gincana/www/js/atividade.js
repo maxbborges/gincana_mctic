@@ -1,11 +1,5 @@
-var protocolo = window.location.protocol+"//";
-var endereco = window.location.hostname;
-if (endereco=='localhost'){
-    porta2 = '/';
-} else {
-    var porta1 = ':443/'
-    var porta2 = ':444/'
-}
+// endereco = 'http://localhost:80/atividade.php'
+endereco = 'https://mbbdev.site/wp-content/plugins/plugin_maxwell/includes/projeto_mctic/gincana_server/atividade.php';
 $(document).ready(function () {
 
     const queryString = window.location.search;
@@ -69,7 +63,7 @@ $(document).ready(function () {
         $.ajax({
             method: "POST",
             dataType: 'json',
-            url: protocolo + endereco + porta2 + "/atividade.php",
+            url: endereco,
             data: { 'opcao': 'verificaFezAtividade', 'id_usuario': id_usuario, 'id_atividade': id_atividade },
             success: function (data) {
                 if (!data['result']) {
@@ -88,7 +82,7 @@ $(document).ready(function () {
         var qr_finaliza = JSON.parse(window.localStorage.getItem('qr_finaliza'));
 
         if (qr_finaliza[codigo_qr] != undefined) {
-            
+
             // var atividade_finaliza = qr_finaliza[codigo_qr].finaliza_atividade;
             // var id_atividade = atividades[atividade_finaliza]['id_atividade'];
             // pontos = atividades[atividade_finaliza]['pontos'];
@@ -101,7 +95,7 @@ $(document).ready(function () {
             $.ajax({
                 method: "POST",
                 dataType: 'json',
-                url: protocolo + endereco + porta2 + "/atividade.php",
+                url: endereco,
                 data: { 'opcao': 'verificaFezAtividade', 'id_usuario': id_usuario, 'id_atividade': id_atividade },
                 success: function (data) {
 
@@ -160,7 +154,7 @@ function enviaPontuacao(pontos, id_atividade) {
     $.ajax({
         method: "POST",
         dataType: 'json',
-        url: protocolo + endereco + porta2 + "/atividade.php",
+        url: endereco,
         data: { 'opcao': 'enviarPontuacao', 'id_usuario': id_usuario, 'pontos': pontos, 'id_atividade': id_atividade },
         success: function (data) {
             localStorage.setItem('pontos', data['pontos']);
@@ -207,6 +201,3 @@ function atividadeQuiz(id_atividade, pontos) {
     });
 
 }
-
-
-

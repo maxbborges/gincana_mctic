@@ -12,12 +12,9 @@ $(document).ready( function () {
     });
 
     $("#confirma_sair").click(function () {
-        //INSERIR PROCESSO DE APAGAR COOKIES
-        document.cookie = 'PHPSESSID=;expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/';
         localStorage.clear();
         $("#modal_sair").modal('hide');
         location.reload();
     });
 
 });
-
