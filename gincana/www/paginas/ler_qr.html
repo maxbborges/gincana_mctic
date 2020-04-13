@@ -3,7 +3,8 @@
 
 <head>
     <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self' blob:* data: 'unsafe-eval' gap: http://* https://ssl.gstatic.com https://cdn.jsdelivr.net 'unsafe-eval'; style-src http://* 'self' 'unsafe-inline' blob:; media-src * blob: polyblob:; img-src 'self' data: content:; connect-src *; child-src * 'self' blob: http:;">
+        content="default-src 'self' blob:* data: 'unsafe-eval' gap: http://* https://ssl.gstatic.com https://cdn.jsdelivr.net 'unsafe-eval'; style-src http://* 'self' 'unsafe-inline' blob:; media-src *; img-src 'self' data: content:; connect-src *; child-src * 'self' blob: http:;">
+
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="viewport"
@@ -26,8 +27,10 @@
     <script src="../js/bootstrap.min.js"></script>
     <!-- <script type="text/javascript" src="../js/instascan.min.js" ></script> -->
 
-    <!-- <script type="text/javascript" src="../js/adapter.min.js"></script> -->
-    <!-- <script type="text/javascript" src="../js/instascan.min.js"></script>
+    <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js" ></script>	
+
+    <!-- <script type="text/javascript" src="../js/adapter.min.js"></script>
+    <script type="text/javascript" src="../js/instascan.min.js"></script>
     <script type="text/javascript" src="../js/QrCodeScanner.js"></script> -->
 
     <script src="../js/verifica_sessao.js"></script>
@@ -51,8 +54,8 @@
 
 
             <div id="div_qr_screen">        
-                <div class='blink'></div>        
-                <!-- <video id="preview"></video> -->
+                <!-- <div class='blink'></div> -->
+                <video id="preview"></video>
             </div>
             <div id="div_image_load">
                 <img src="../img/load_2.gif" id="img_load_qr">
