@@ -2,15 +2,6 @@ var atividades = JSON.parse(window.localStorage.getItem('atividades'));
 
 // alert(navigator.platform);
 
-let scanner = new Instascan.Scanner({
-        video: document.getElementById('preview')
-});
-
-scanner.addListener('scan', function(content) {
-    verificaQr(content);
-    // window.open(content, "_blank");
-});
-
 
 // window.addEventListener("load", function () {
 //     setTimeout(() => {
@@ -76,11 +67,18 @@ scanner.addListener('scan', function(content) {
 //     }
 // }
 
-
-
 $("#btn_enviar_qr").click(function () {
     var text = $("#text_qr_manual").val();
     verificaQr(text);
+});
+
+let scanner = new Instascan.Scanner({
+        video: document.getElementById('preview')
+});
+
+scanner.addListener('scan', function(content) {
+    verificaQr(content);
+    // window.open(content, "_blank");
 });
 
 Instascan.Camera.getCameras().then(cameras => {
