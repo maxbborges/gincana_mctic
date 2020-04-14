@@ -27,7 +27,7 @@
     <script src="../js/bootstrap.min.js"></script>
     <!-- <script type="text/javascript" src="../js/instascan.min.js" ></script> -->
 
-    <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js" ></script>	
+    <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js" ></script>
 
     <!-- <script type="text/javascript" src="../js/adapter.min.js"></script>
     <script type="text/javascript" src="../js/instascan.min.js"></script>
@@ -53,9 +53,10 @@
         </div>
 
 
-            <div id="div_qr_screen">        
+            <div id="div_qr_screen">
                 <!-- <div class='blink'></div> -->
-                <video id="preview"></video>
+                <!-- <video id="preview"></video> -->
+                <video id="preview" class="video" playsinline autoplay muted loop></video>
             </div>
             <div id="div_image_load">
                 <img src="../img/load_2.gif" id="img_load_qr">
@@ -68,14 +69,14 @@
                     </div>
                     <div id="div_btn_enviar_qr_manual">
                         <button type="button" class="btn btn_inicio" id="btn_enviar_qr">ENVIAR</button>
-                    </div>                                    
+                    </div>
                 </div>
             </div>
             <div class="clearfix"></div>
 
             <div id="div_btn_voltar_qr">
                 <button type="button" class="btn btn_cancelar btn_voltar_ler_qr">CANCELAR</button>
-            </div>            
+            </div>
         </div>
 
         <div id="footer"></div>

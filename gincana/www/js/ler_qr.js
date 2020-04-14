@@ -7,17 +7,17 @@ let scanner = new Instascan.Scanner({
 });
 
 scanner.addListener('scan', function(content) {
-    verificaQr(content);    
-    window.open(content, "_blank");
+    verificaQr(content);
+    // window.open(content, "_blank");
 });
 
 
 // window.addEventListener("load", function () {
-//     setTimeout(() => { 
-//         QRScanner.prepare(onDone); 
+//     setTimeout(() => {
+//         QRScanner.prepare(onDone);
 //     }, 1000);
 // });
-
+//
 // function onDone(err, status) {
 //     if (err) {
 //         alert("Não foi possível acessar a câmera do dispositivo");
@@ -26,7 +26,7 @@ scanner.addListener('scan', function(content) {
 //         $("#div_qr_manual").show();
 //         $("#div_btn_voltar_qr").hide();
 //         $("#div_btn_qr_manual").show();
-//         $("#span_title_qr").html("Digite o código do QR code");          
+//         $("#span_title_qr").html("Digite o código do QR code");
 //     }
 //     if (status.authorized) {
 //         $("#img_load_qr").hide();
@@ -34,7 +34,7 @@ scanner.addListener('scan', function(content) {
 //         $("#div_btn_voltar_qr").show();
 //         $("#div_btn_qr_manual").hide();
 //         $("#span_title_qr").html("Escaneie o código do QR code");
-
+//
 //         var elements = document.getElementsByClassName('blink')
 //         for (var i = 0; i < elements.length; i++) {
 //             elements[i].style.display = 'none';
@@ -72,7 +72,7 @@ scanner.addListener('scan', function(content) {
 //         $("#span_title_qr").html("Digite o código do QR code");
 //     } else {
 //         // The scan completed, display the contents of the QR code:
-//         verificaQr(text.result);
+//         verificaQr(text);
 //     }
 // }
 
@@ -120,6 +120,9 @@ $(".btn_voltar_ler_qr").click(function () {
 });
 
 function verificaQr(content) {
+    if (typeof content=='object'){
+      content=content.result;
+    }
     var arr_qr = JSON.parse(window.localStorage.getItem('todos_qr'));
     var tipo = arr_qr[content];
 
@@ -135,9 +138,3 @@ function verificaQr(content) {
     }
 
 }
-
-
-
-
-
-
