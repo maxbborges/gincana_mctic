@@ -98,69 +98,7 @@ Instascan.Camera.getCameras().then(cameras => {
           }
         });
         scanner.start(selectedCam);
-//
-//
-//
-//         if (cameras.length == 1) {
-//
-//             alert (JSON.stringify(cameras));
-//             var selectedCam = cameras[0];
-// $.each(cameras, (i, c) => {
-//   alert(JSON.stringify(c));
-//     if (c.name.indexOf('integrated') != -1) {
-//         selectedCam = c;
-//         return false;
-//     }
-// });
-//             scanner.start(selectedCam);
-//         } else {
-//           var selectedCam = cameras[0];
-//           $.each(cameras, (i, c) => {
-//             if (c.name.indexOf('back') != -1) {
-//               selectedCam = c;
-//               return false;
-//             }
-//             if (c.name.indexOf('Trás') != -1) {
-//               selectedCam = c;
-//               return false;
-//             }
-//           });
-//           scanner.start(selectedCam);
-//
-//
-//
-//
-//
-//
-//           if (navigator.userAgent.match(/android/i)) {
-//             var selectedCam = cameras[0];
-// $.each(cameras, (i, c) => {
-//     if (c.name.indexOf('back') != -1) {
-//       alert(JSON.stringify(c));
-//         selectedCam = c;
-//         return false;
-//     }
-// });
-//             scanner.start(selectedCam);
-//           } else if (navigator.userAgent.match(/linux/i)) {
-//              alert('vc usa Linux e possui:'+cameras.length);
-//           } else if (navigator.userAgent.match(/iPad/i)||navigator.userAgent.match(/iPhone/i)){
-//             var selectedCam = cameras[0];
-//             $.each(cameras, (i, c) => {
-//               if (c.name.indexOf('back') != -1) {
-//                 selectedCam = c;
-//                 return false;
-//               }
-//               if (c.name.indexOf('Trás') != -1) {
-//                 selectedCam = c;
-//                 return false;
-//               }
-//             });
-//             scanner.start(selectedCam);
-//           }else if (navigator.userAgent.match(/Windows/i)){
-//             alert('vc usa seu pc de casa e possui: '+cameras.length);
-//           }
-//         }
+        //navigator.userAgent.match(/android/i)
     } else {
         alert("Não foi possível acessar a câmera do dispositivo1");
         $("#img_load_qr").hide();
