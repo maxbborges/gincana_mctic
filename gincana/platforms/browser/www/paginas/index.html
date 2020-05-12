@@ -1,0 +1,89 @@
+<!DOCTYPE html><html><head>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' blob:* data: gap: http://* https://ssl.gstatic.com https://cdn.jsdelivr.net 'unsafe-eval' ws: 'unsafe-inline'; style-src http://* 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:; connect-src *; worker-src *; script-src 'self' https://cdnjs.cloudflare.com https://ajax.googleapis.com https://cdn.jsdelivr.net https://35.223.219.35:444 http://localhost https://192.168.0.89:* https://mbbdev.site 'self' 'unsafe-inline' http://localhost:3000 http://172.17.0.2:3000;">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <meta charset="UTF-8">
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <link rel="stylesheet" type="text/css" href="../css/layout.css">
+    <link rel="stylesheet" type="text/css" href="../css/footer.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="icon" href="../img/logo_gincana.png">
+
+    <script src="../js/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/verifica_sessao.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+    <script type="text/javascript" src="../js/footer.js"></script>
+
+    <title>1ª Gincana Científica Tecnológica - MCTIC</title>
+</head>
+
+<body>
+
+    <div id="geral">
+        <div class="div_logo_gincana">
+            <img src="../img/logo_gincana.png" class="logo_gincana">
+        </div>
+
+            <div class="container">
+                <form id="login-form" class="form-horizontal" role="form">
+                    <div class="form-group group_form">
+                        <!-- <span class="title_form">Nome</span> -->
+                        <div class="input-group margin-bottom-md">
+                            <input type="text" class="form-control form_input" id="nome" name="nome" required placeholder="NOME">
+                        </div>
+                    </div>
+                    <div class="form-group group_form">
+                        <!-- <span class="title_form">E-mail</span> -->
+                        <div class="input-group margin-bottom-md">
+                            <input type="email" class="form-control form_input" id="email" name="email" placeholder="E-MAIL" required>
+                        </div>
+                    </div>
+                    <div class="form-group group_form">
+                        <div class="input-group margin-bottom-md">
+                            <input type="text" class="form-control form_input input_instagram" id="inputInstagram" name="inputInstagram" placeholder="INSTAGRAM">
+                            <input type="text" class="form-control form_input input_twitter" id="inputTwitter" name="inputTwitter" placeholder="TWITTER">
+                        </div>
+                    </div>
+
+                    <div class="form-group group_form">
+                        <div class="input-group margin-bottom-md">
+                            <input type="text" class="form-control form_input input_facebook" id="inputFacebook" name="inputFacebook" placeholder="FACEBOOK">
+                            <input type="text" class="form-control form_input input_whatsapp" id="inputWhatsapp" name="inputWhatsapp" placeholder="WHATSAPP">
+                        </div>
+                    </div>
+
+
+                    <div class="form-group group_form">
+                        <span class="title_form">Data de nascimento</span>
+                        <div class="input-group margin-bottom-md">
+                            <!-- <input type="date" class="form-control form_input" id="dataDeNascimento"
+                                name="dataDeNascimento" required> -->
+                                <select class="form-control form_input input_dia" id="inputDia" name="inputDia" required placeholder="FACEBOOK"></select>
+                                <select class="form-control form_input input_mes" id="inputMes" name="inputMes" required placeholder="FACEBOOK"></select>
+                                <select class="form-control form_input input_ano" id="inputAno" name="inputAno" required placeholder="FACEBOOK"></select>
+                        </div>
+                    </div>
+                    <div class="input-group margin-bottom-md">
+                        <input type="text" class="form-control form_input" id="cookie" name="cookie" readonly="true" hidden required>
+                    </div>
+
+                    <div class="form-group margin-top-pq div_btn_login">
+                        <div class="col-sm-12 controls">
+                            <button type="button" class="btn btn_inicio" name="btn-login" id="btn-login">SEGUINTE</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <div id="footer"></div>
+    </div>
+    <script type="text/javascript" src="../cordova.js"></script>
+    <script type="text/javascript" src="../js/login.js"></script>
+
+
+</body></html>

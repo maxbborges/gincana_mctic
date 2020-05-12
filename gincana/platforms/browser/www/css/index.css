@@ -1,0 +1,84 @@
+
+/* @media screen and (min-width:200px) and (max-width:900px) { */
+
+    /* .div_logo_gincana, #login-form  {
+        display: none;
+    }
+     */
+
+     body {
+        margin: 0;
+    }
+    .form_input{
+        width: 290px;
+        height: 44px;
+        background: #FFFFFF;
+        outline: 0;
+        border-width: 0 0 2px;
+        border-color: #FFCB06;
+        margin-bottom: 7px;
+    }
+
+    .input_rede{
+        width: 200px;
+    }
+
+    .select_rede{
+        width: 85px;
+        padding-right: 0px;
+        /* height: 48px; */
+    }
+
+    .title_form{
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 24px;
+        color: #FFCB06;        
+    }
+
+    .group_form{
+        margin-left: auto;
+        margin-right: auto;
+        width: 290px;
+        margin-bottom: 10px;
+    }
+
+    .input_instagram, .input_facebook{
+        width: 145px;
+        margin-right: 5px;
+    }
+
+    .input_twitter, .input_whatsapp{
+        width: 140px;
+    }
+
+    .input_dia, .input_mes, .input_ano{
+        width: 93px;
+        margin-right: 5px;
+    }
+
+    #btn-login{
+        width: 99px;
+    }
+
+    #dataDeNascimento{
+        width: 297px !important;
+    }
+
+    /* #div_form_login{
+        text-align: center;
+    } */
+
+    .div_btn_login{
+        text-align: right !important;
+        /* padding-right: 58px; */
+        margin-top: 13px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 306px;
+        /* margin-bottom: 10px; */
+    }
+
+/* } */
+

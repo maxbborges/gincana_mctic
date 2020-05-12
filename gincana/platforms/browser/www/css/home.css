@@ -1,0 +1,70 @@
+/* @media screen and (min-width:200px) and (max-width:900px) { */
+
+    #info_jogador{
+        text-align: center;
+    }
+
+    #div_span_jogador, #div_titulo_pontos{
+        margin-top: 10%;
+    }
+
+    #div_span_usuario, #div_pontos{
+        margin-top: 12px;
+    }
+
+    .span_titulo_pontos{
+        font-size: 16px;
+        color: #FFCB06;
+        font-style: normal;
+        font-weight: normal;
+    }
+
+    #div_span_codigo{
+        margin-top: 20px;
+    }
+
+    .span_codigo{
+        font-size: 24px;
+        color: #FFCB06;
+    }
+
+    .span_pontos{
+        font-size: 24px;
+        color: white;
+    }
+
+    #div_btn_home{
+        text-align: center;
+    }
+
+    #btn_ler_qr{
+        width: 294px;
+        margin-top: 20px;
+    }
+
+    #btn_trocar_pontos{
+        width: 294px;
+        margin-top: 20px;
+    }
+
+    #link_sair{
+        margin-top: 15px;
+        text-align: center;
+    }
+
+    #span_link_sair{
+        font-style: italic;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 24px;
+        text-decoration-line: underline;
+        color: #FFCB06;
+    }
+
+    #confirma_sair{
+        width: 91px;
+    }
+
+
+/* } */
+

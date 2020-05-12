@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self' blob:* data: gap: script-src: http://* https://ssl.gstatic.com https://cdn.jsdelivr.net 'unsafe-eval'; style-src http://* 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:; connect-src *;worker-src *;script-src 'self' https://cdn.jsdelivr.net https://35.223.219.35:444 http://localhost https://192.168.0.89:*  https://mbbdev.site;">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport"
+        content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <meta charset="UTF-8">
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/layout.css">
+    <link rel="stylesheet" type="text/css" href="../css/footer.css">
+    <link rel="stylesheet" type="text/css" href="../css/home.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="icon" href="../img/logo_gincana.png">
+
+    <script src="../js/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="../js/verifica_sessao.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/footer.js"></script>
+
+    <title>1ª Gincana Científica Tecnológica - MCTIC</title>
+</head>
+
+<body>
+    <div id="geral">
+    <div class="div_logo_gincana">
+        <img src="../img/logo_gincana.png" class="logo_gincana" />
+    </div>
+    <div class="container">
+        <div id="info_jogador">
+            <div id="div_span_jogador">
+                <span class="span_jogador">JOGADOR</span>
+            </div>
+            <div id="div_span_usuario">
+                <span class="nome_usuario"></span>
+            </div>
+            <div id="div_titulo_pontos">
+                <span class="span_titulo_pontos">TOTAL DE PONTOS</span>
+            </div>
+            <div id="div_pontos">
+                <span id="span_pontos" class="span_pontos"></span>
+            </div>
+        </div>
+        <div id="div_btn_home">
+            <!-- <div id="div_btn_qr"> -->
+                <button type="button" id="btn_ler_qr" class="btn_inicio">LER QR CODE</button>
+            <!-- </div> -->
+            <!-- <div id="div_btn_troca"> -->
+                <button type="button" id="btn_trocar_pontos" class="btn_troca_pontos">TROCA DE PONTOS</button>
+            <!-- </div> -->
+
+            <div id="div_span_codigo">
+                <span class="span_codigo">USUÁRIO Nº</span>
+                <span id="span_codigo" class="span_codigo"></span>
+            </div>
+        </div>
+        <div id="link_sair">
+            <span id="span_link_sair">Sair</span>
+        </div>
+    </div>
+    <div id="footer"></div>
+
+</div>
+
+<div class="modal" tabindex="-1" role="dialog" id="modal_sair">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <!-- <div class="modal-header">
+          <h5 class="modal-title">Sair</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div> -->
+        <div class="modal-body">
+          <p>Se sair, <strong>perderá</strong> todos os pontos. Tem certeza?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn_cancelar" data-dismiss="modal">CANCELAR</button>
+          <button type="button" class="btn btn_inicio" id="confirma_sair">SAIR</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script type="text/javascript" src="../cordova.js"></script>
+    <script type="text/javascript" src="../js/home.js"></script>
+
+</body>
+</html>
